@@ -1,10 +1,12 @@
-import styles from './App.module.css';
+import { StrictMode } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { router } from '../../routes';
 
 export const App = () => {
   return (
-    <div className={styles['page-wrapper']}>
-      Привет мир!
-    </div>
+    <StrictMode>
+      <RouterProvider router={router} />
+    </StrictMode>
   )
 }
 
