@@ -5,10 +5,9 @@ export const AppLayout = () => {
   return (
     <>
       <header>ХЕДР</header>
-      <Suspense>
+      <Suspense fallback={null}>
         <Outlet />
       </Suspense>
-      <footer>ФУТЕР</footer>
     </>   
   )
 }

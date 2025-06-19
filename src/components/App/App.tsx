@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import { RouterProvider } from 'react-router-dom';
+
 import { router } from '../../routes';
 
 export const App = () => {
@@ -9,5 +10,3 @@ export const App = () => {
     </StrictMode>
   )
 }
-
-export default App
