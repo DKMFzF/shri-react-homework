@@ -1,7 +1,5 @@
 export const GeneratorPage = () => {
   return (
-    <>
-      GeneratorPage
-    </>
+      <>GeneratorPage</>
   );
 }

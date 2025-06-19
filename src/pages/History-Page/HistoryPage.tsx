@@ -1,7 +1,5 @@
 export const HistoryPage = () => {
   return (
-    <>
-      HistoryPage
-    </>
+      <>HistoryPage</>
   );
 }
