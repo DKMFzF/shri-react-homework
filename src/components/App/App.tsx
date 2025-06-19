@@ -9,5 +9,3 @@ export const App = () => {
     </StrictMode>
   )
 }
-
-export default App
