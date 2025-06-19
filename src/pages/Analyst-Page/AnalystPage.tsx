@@ -1,7 +1,11 @@
+import { CommonPage } from '../Common-Page';
+
 export const AnalystPage = () => {
   return (
-    <div>
-      AnalystPage
-    </div>
+    <CommonPage>
+      <div>
+        AnalystPage
+      </div>
+    </CommonPage>
   );
 }
