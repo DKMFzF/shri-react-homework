@@ -9,9 +9,9 @@ export const AnalystDragAndDrop = () => {
         <span className={styles["analyst-drag-and-drop__bold-text"]}>csv</span>{" "}
         файл и получите{" "}
         <span className={styles["analyst-drag-and-drop__bold-text"]}>
-          полную информацию
+          полную информацию
         </span>{" "}
-        о нём за сверхнизкое время
+        о нём за сверхнизкое время
       </span>
       <div className={styles["analyst-drag-and-drop__container"]}>
         <ButtonUpload>Загрузить файл</ButtonUpload>
