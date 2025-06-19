@@ -6,9 +6,11 @@
   --font-size-standart-text-l: 35px;
   --font-size-bigger-text-xl: 40px;
 
+  --font-color-default: rgba(32, 27, 16, 1);
+
   --color-default-bg: rgba(252, 226, 255, 1);
   --color-dark-bg: rgba(234, 205, 255, 1);
-  --color-contrast-bg: rgba(203, 129, 255, 1);
+  --color-high-contrast-bg: rgba(203, 129, 255, 1);
 
   --color-start-move: rgba(42, 232, 129, 1);
   --color-load: rgba(252, 227, 0, 1);

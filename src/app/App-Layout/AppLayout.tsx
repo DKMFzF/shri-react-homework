@@ -1,11 +1,13 @@
-import { CommonPage } from "@pages";
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
+
+import { CommonPage } from "@pages";
+import { HeaderUI } from '../../components/ui';
 
 export const AppLayout = () => {
   return (
     <CommonPage>
-      <header>ХЕДР</header>
+      <HeaderUI />
       <main id="main-content">
         <Suspense fallback={null}>
           <Outlet />
