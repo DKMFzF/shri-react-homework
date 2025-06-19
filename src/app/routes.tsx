@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import { AppLayout } from './components/App-Layout';
+import { AppLayout } from './App-Layout';
 import {
   AnalystPage,
   GeneratorPage,
@@ -8,6 +8,8 @@ import {
   NotFoundPage
 } from '@pages';
 
+// такого подключение роутинга в лекциях не было
+// но это всё равно часть react-router-dom
 export const router = createBrowserRouter([
   {
     path: '/',
