@@ -1,6 +1,8 @@
 .common-section {
+  height: 100%;
 }
 
 .common-section__wrapper-section {
-  margin-top: 80px;
+  height: 100%;
+  padding-top: 80px;
 }
