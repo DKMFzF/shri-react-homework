@@ -5,4 +5,5 @@ export type AppHeaderNavLinkProps = {
   altImg: string;
   text: string;
   stylesClass?: string;
+  isActive: boolean;
 }

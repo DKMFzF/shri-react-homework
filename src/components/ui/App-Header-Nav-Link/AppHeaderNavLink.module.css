@@ -1,3 +1,7 @@
+:root {
+  --active-nav-link: translateX(0);
+}
+
 .header__nav-link-wrapper {
   position: relative;
   padding: 10px;
@@ -20,5 +24,9 @@
 }
 
 .header__nav-link-wrapper:hover::before {
-  transform: translateX(0);
+  transform: var(--active-nav-link);
+}
+
+.header__nav-link-wrapper_active::before  {
+  transform: var(--active-nav-link);
 }

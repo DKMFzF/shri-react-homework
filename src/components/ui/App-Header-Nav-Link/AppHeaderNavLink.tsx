@@ -8,21 +8,30 @@ export const AppHeaderNavLink = ({
   pathImg,
   altImg,
   text,
-  stylesClass = ''
-}: AppHeaderNavLinkProps) => (
-  <Link
-    to={url}
-    role="button"
-    className={styles['header__nav-link-wrapper']}
-  >
-    <img
-      src={pathImg}
-      alt={altImg}
-      loading='lazy'
-      decoding='async'
-    />
-    <span className={`${stylesClass}`}>
-      {text}
-    </span>
-  </Link>
-);
+  stylesClass = '',
+  isActive
+}: AppHeaderNavLinkProps) => {
+  
+  return (
+    <Link
+      to={url}
+      role="button"
+      className={`
+        ${styles['header__nav-link-wrapper']}
+        ${isActive
+          ? styles['header__nav-link-wrapper_active']
+          : ''}`
+      }
+    >
+      <img
+        src={pathImg}
+        alt={altImg}
+        loading='lazy'
+        decoding='async'
+      />
+      <span className={`${stylesClass}`}>
+        {text}
+      </span>
+    </Link>
+  )
+};
