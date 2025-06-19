@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 
-import { type AppHeaderNavLinkProps } from './type';
+import { type AppHeaderNavLinkUIProps } from './type';
 import styles from './AppHeaderNavLink.module.css';
 
-export const AppHeaderNavLink = ({
+export const AppHeaderNavLinkUI = ({
   url,
   pathImg,
   altImg,
   text,
   stylesClass = '',
   isActive
-}: AppHeaderNavLinkProps) => {
+}: AppHeaderNavLinkUIProps) => {
   
   return (
     <Link

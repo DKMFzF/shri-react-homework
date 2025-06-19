@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { AppHeaderNavLink } from "../";
+import { AppHeaderNavLinkUI } from "../";
 import styles from "./AppHeader.module.css";
 
 export const HeaderUI = () => {
@@ -23,7 +23,7 @@ export const HeaderUI = () => {
         </div>
 
         <nav className={styles["header__top-menu"]}>
-          <AppHeaderNavLink
+          <AppHeaderNavLinkUI
             url="/"
             pathImg="./analyst-icon.svg"
             altImg="загрзука"
@@ -31,7 +31,7 @@ export const HeaderUI = () => {
             isActive={location.pathname == "/"}
           />
 
-          <AppHeaderNavLink
+          <AppHeaderNavLinkUI
             url="/generator"
             pathImg="./generator-icon.svg"
             altImg="генератор"
@@ -39,7 +39,7 @@ export const HeaderUI = () => {
             isActive={location.pathname == "/generator"}
           />
 
-          <AppHeaderNavLink
+          <AppHeaderNavLinkUI
             url="/history"
             pathImg="./history-icon.svg"
             altImg="история"

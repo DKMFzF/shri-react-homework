@@ -1,5 +1,5 @@
 
-export type AppHeaderNavLinkProps = {
+export type AppHeaderNavLinkUIProps = {
   url: string;
   pathImg: string;
   altImg: string;
