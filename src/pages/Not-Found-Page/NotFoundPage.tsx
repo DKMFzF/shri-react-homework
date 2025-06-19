@@ -1,3 +1,1 @@
-import { CommonPage } from '../Common-Page';
-
-export const NotFoundPage = () => <CommonPage>Not-Found-Page</CommonPage>;
+export const NotFoundPage = () => <>Not-Found-Page</>;

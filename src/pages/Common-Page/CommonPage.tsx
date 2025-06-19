@@ -3,8 +3,10 @@ import styles from './CommonPage.module.css';
 
 export const CommonPage = ({ children }: CommonPageProps) => {
   return (
-    <main className={styles['common-page']}>
-      {children}
-    </main>
+    <div className={styles['common-page']}>
+      <div className={styles['common-page__content-wrapper']}>
+        {children}
+      </div>
+    </div>
   );
 }

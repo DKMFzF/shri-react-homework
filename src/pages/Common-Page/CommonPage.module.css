@@ -1,5 +1,11 @@
 .common-page {
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
   background-color: rgba(252, 226, 255, 1);
+}
+
+.common-page__content-wrapper {
+  margin-inline: 40px;
+  padding-block: 40px;
+  width: 100%;
 }
