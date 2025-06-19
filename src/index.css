@@ -1,1 +1,7 @@
 @import url("./css/index.css");
+
+:root {
+  font-family: var(--font-family);
+  color: var(--font-color-default);
+  font-size: var(--font-size-standart-text-m);
+}
