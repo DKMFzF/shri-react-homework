@@ -1,0 +1,22 @@
+.analyst-drag-and-drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.analyst-drag-and-drop__bold-text {
+  font-weight: 900;
+}
+
+.analyst-drag-and-drop__container {
+  padding-block: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(234, 205, 255, 1);
+  border-radius: 40px;
+}
