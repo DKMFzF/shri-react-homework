@@ -27,6 +27,10 @@
   transform: var(--active-nav-link);
 }
 
+.header__nav-link-wrapper_active {
+  cursor: default;
+}
+
 .header__nav-link-wrapper_active::before  {
   transform: var(--active-nav-link);
 }

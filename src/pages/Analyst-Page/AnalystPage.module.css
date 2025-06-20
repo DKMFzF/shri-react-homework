@@ -1,0 +1,40 @@
+@import url(../../css/variables.css);
+
+.analyst-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.analyst-page__controller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.analyst-page__bold-text {
+  font-weight: 900;
+}
+
+/* .analyst-page__highlights {
+  margin-top: 60px;
+} */
+
+.analyst-page__highlights_none {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-high-contrast-bg);
+  font-size: var(--font-size-bigger-text-xl);
+}
+
+.analyst-page__none-text {
+  width: min-content;
+  text-align: center;
+}
+
+.analyst-page__none-text_nowrap {
+  white-space: pre;
+}
