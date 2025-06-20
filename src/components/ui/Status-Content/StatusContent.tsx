@@ -5,7 +5,8 @@ import styles from './StatusContent.module.css';
 export const StatusContent = ({
   status,
   statusText,
-  descriptionText
+  descriptionText,
+  onDelete
 }: StatusContentProps) => {
   return (
     <div className={styles['status-content']}>
@@ -21,7 +22,7 @@ export const StatusContent = ({
         >
           {statusText}
         </div>
-        <ButtonDelete />
+        <ButtonDelete onClick={onDelete} />
       </div>
       <div className={`
         ${styles['status-content__description-text']}
