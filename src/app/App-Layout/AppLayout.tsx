@@ -9,7 +9,7 @@ export const AppLayout = () => {
     <CommonPage>
       <HeaderUI />
       <main id="main-content" style={{
-        height: 'calc(100vh - 180px - 40px)',
+        height: 'calc(-140px + 100vh)',
       }}>
         <CommonSection>
           <Suspense fallback={null}>
