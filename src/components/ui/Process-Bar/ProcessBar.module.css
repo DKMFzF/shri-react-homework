@@ -1,13 +1,6 @@
-@import url(../../css/variables.css);
+@import url(../../../css/variables.css);
 
-.generator-page {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
-}
-
-.generator-page__process-loader {
+.process-bar {
   position: relative;
   inline-size: 402px;
   block-size: 70px;
@@ -15,7 +8,7 @@
   border-radius: 10px;
 }
 
-.generator-page__process-loader::after {
+.process-bar::after {
   content: '';
   position: absolute;
   block-size: 45px;
