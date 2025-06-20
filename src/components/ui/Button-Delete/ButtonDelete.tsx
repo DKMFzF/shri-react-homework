@@ -1,7 +1,11 @@
 import styles from './ButtonDelete.module.css';
 
-export const ButtonDelete = () => {
+type ButtonDeleteProps = {
+  onClick?: () => void;
+};
+
+export const ButtonDelete = ({ onClick }: ButtonDeleteProps) => {
   return (
-    <button className={styles['button-delete']}></button>
+    <button className={styles['button-delete']} onClick={onClick}></button>
   );
 }
