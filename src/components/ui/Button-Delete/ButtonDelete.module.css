@@ -1,0 +1,23 @@
+.button-delete {
+  padding: 0;
+  position: relative;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgba(32, 27, 16, 1);
+  inline-size: 70px;
+  block-size: 70px;
+}
+
+.button-delete::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 50%;
+  inline-size: 32px;
+  block-size: 32px;
+  background-position: center;
+  background-size: cover;
+  background-image: url(./cross-icon.svg);
+  transform: translate(-50%, 57%);
+}

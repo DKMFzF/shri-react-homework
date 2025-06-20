@@ -8,27 +8,3 @@
   font-size: var(--font-size-standart-text-l);
   cursor: pointer;
 }
-
-/* TODO: вынести кнопку удаления в отдельный компонент */
-
-/* btn delete */
-.button-upload_done-load {
-  padding: 0;
-  position: relative;
-  background-color: rgba(32, 27, 16, 1);
-  inline-size: 70px;
-  block-size: 70px;
-}
-
-.button-upload_done-load::after {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 50%;
-  inline-size: 32px;
-  block-size: 32px;
-  background-position: center;
-  background-size: cover;
-  background-image: url(./cross-icon.svg);
-  transform: translate(-50%, 57%);
-}

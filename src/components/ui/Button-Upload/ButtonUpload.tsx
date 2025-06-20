@@ -5,10 +5,8 @@ export const ButtonUpload = ({
   children,
 }: ButtonUploadProps) => {
   return (
-    <>
-      <button className={styles['button-upload']}>
-        {children}
-      </button>
-    </>
+    <button className={styles['button-upload']}>
+      {children}
+    </button>
   );
 }

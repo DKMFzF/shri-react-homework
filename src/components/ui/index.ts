@@ -1,7 +1,9 @@
 // common ui compoentns
 export * from './Button';
 export * from './Button-Upload';
+export * from './Button-Delete';
 export * from './Process-Bar';
+export * from './Status-Content';
 
 // components
 export * from './App-Header';
