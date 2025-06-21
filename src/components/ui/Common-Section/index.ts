@@ -1,1 +1,1 @@
-export { CommonSection } from './CommonSection';
+export { CommonSectionUI } from './CommonSection';

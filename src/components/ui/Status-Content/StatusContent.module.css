@@ -14,6 +14,10 @@
   border-radius: 10px;
 }
 
+.status-content__process-status_deafult {
+  background-color: var(--color-high-contrast-bg);
+}
+
 .status-content__process-status_done {
   background-color: var(--color-access);
 }

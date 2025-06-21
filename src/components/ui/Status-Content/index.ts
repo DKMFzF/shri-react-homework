@@ -1,1 +1,1 @@
-export { StatusContent } from './StatusContent';
+export { StatusContentUI } from './StatusContent';

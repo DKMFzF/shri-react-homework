@@ -1,1 +1,0 @@
-export { CommonPage } from './CommonPage';

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Button, ProcessBar, StatusContent } from "../../components/ui";
+import { ButtonUI, ProcessBarUI, StatusContentUI } from "../../components/ui";
 import { reportsApi } from "../../services/reportsApi";
 import { useGeneratorStore } from "../../stories";
 import styles from "./GeneratorPage.module.css";
@@ -59,7 +59,7 @@ export const GeneratorPage = () => {
     return (
       <div className={styles['generator-page']}>
         Сгенерируйте готовый csv-файл нажатием одной кнопки
-        <StatusContent
+        <StatusContentUI
           status="error"
           statusText="Ошибка"
           descriptionText="упс, не то..."
@@ -75,7 +75,7 @@ export const GeneratorPage = () => {
       
       {downloadUrl ? (
         <>
-          <StatusContent 
+          <StatusContentUI
             status="done" 
             statusText="Done!" 
             descriptionText="файл сгенерирован!" 
@@ -83,12 +83,12 @@ export const GeneratorPage = () => {
           />
         </>
       ) : !isLoading ? (
-        <Button type="send" onClick={handleGenerate} disabled={isLoading}>
+        <ButtonUI type="send" onClick={handleGenerate} disabled={isLoading}>
           Начать Генерацию
-        </Button>
+        </ButtonUI>
       ) : (
         <>
-          <ProcessBar />
+          <ProcessBarUI />
           идёт процесс генерации
         </>
       )}
