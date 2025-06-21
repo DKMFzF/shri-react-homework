@@ -1,1 +1,1 @@
-export { HeaderUI } from './AppHeader';
+export { AppHeaderUI } from './AppHeader';
