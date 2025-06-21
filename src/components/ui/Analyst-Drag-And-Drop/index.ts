@@ -1,1 +1,1 @@
-export { AnalystDragAndDrop } from './AnalystDragAndDrop';
+export { AnalystDragAndDropUI } from './AnalystDragAndDropUI';

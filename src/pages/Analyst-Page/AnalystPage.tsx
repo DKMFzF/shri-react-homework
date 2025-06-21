@@ -1,4 +1,5 @@
-import { AnalystDragAndDrop, Button } from '../../components/ui';
+import { AnalystDragAndDrop } from '../../components';
+import { Button } from '../../components/ui';
 import styles from './AnalystPage.module.css';
 import { useFileStore } from '../../stories';
 
