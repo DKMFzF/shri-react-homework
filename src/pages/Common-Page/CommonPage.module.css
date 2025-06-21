@@ -2,7 +2,6 @@
 
 .common-page {
   min-height: 100vh;
-  display: flex;
   background-color: var(--color-default-bg);
 }
 
@@ -11,5 +10,4 @@
   
   margin-inline: var(--indent-common-page);
   padding-block: var(--indent-common-page);
-  width: 100%;
 }

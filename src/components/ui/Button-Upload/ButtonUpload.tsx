@@ -3,9 +3,10 @@ import styles from './ButtonUpload.module.css';
 
 export const ButtonUpload = ({
   children,
-}: ButtonUploadProps) => {
+  onClick,
+}: ButtonUploadProps & { onClick?: () => void }) => {
   return (
-    <button className={styles['button-upload']}>
+    <button className={styles['button-upload']} onClick={onClick}>
       {children}
     </button>
   );

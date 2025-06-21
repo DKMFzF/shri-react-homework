@@ -15,6 +15,7 @@ export const AnalystPage = () => {
           о нём за сверхнизкое время
         </span>
         <AnalystDragAndDrop />
+        
         <Button type="send" isActive>
           Отправить
         </Button>
