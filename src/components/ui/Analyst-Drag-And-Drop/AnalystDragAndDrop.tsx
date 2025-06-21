@@ -44,7 +44,11 @@ export const AnalystDragAndDropUI = ({
           status={status}
           statusText={fileName}
           descriptionText={
-            status === "error" ? "упс, не то..." : "файл загружен"
+            status === "error"
+              ? "упс, не то..."
+              : status === 'done'
+              ? "готово!"
+              : 'файл был загружен'
           }
           onDelete={onReset}
         />

@@ -1,5 +1,5 @@
 export type AnalystDragAndDropProps = {
   onReset: () => void;
-  showErrorStatus?: boolean;
+  status: string;
   isLoading?: boolean;
 }

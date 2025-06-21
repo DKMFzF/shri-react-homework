@@ -48,6 +48,14 @@ export const AnalystPage = () => {
     }
   };
 
+  const getStatus = () => {
+    if (error) return "error";
+    if (isLoading) return "processing";
+    if (responseData) return "done";
+    if (file) return "default";
+    return "empty";
+  };
+
   const handleReset = () => {
     reset();
     setError(false);
@@ -69,7 +77,7 @@ export const AnalystPage = () => {
 
         <AnalystDragAndDrop
           onReset={handleReset}
-          showErrorStatus={error}
+          status={getStatus()}
           isLoading={isLoading}
         />
 

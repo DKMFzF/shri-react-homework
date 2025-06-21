@@ -3,7 +3,11 @@ import { AnalystDragAndDropUI } from "../ui";
 import { useDragAndDrop } from "../../hooks";
 import { type AnalystDragAndDropProps } from './type';
 
-export const AnalystDragAndDrop = ({ onReset, showErrorStatus, isLoading }: AnalystDragAndDropProps) => {
+export const AnalystDragAndDrop = ({
+  onReset,
+  status,
+  isLoading
+}: AnalystDragAndDropProps) => {
   const {
     fileName,
     isDragging,
@@ -34,7 +38,7 @@ export const AnalystDragAndDrop = ({ onReset, showErrorStatus, isLoading }: Anal
       onDrop={onDrop}
       onReset={handleReset}
       inputRef={fileInputRef}
-      status={showErrorStatus ? "error" : fileName ? "done" : "default"}
+      status={status}
       isLoading={isLoading}
     />
   );
