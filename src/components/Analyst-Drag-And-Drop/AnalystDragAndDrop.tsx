@@ -1,10 +1,15 @@
 import { useFileStore } from "../../stories";
 import { AnalystDragAndDropUI } from "../ui";
 import { useDragAndDrop } from "../../hooks";
+import { type AnalystDragAndDropProps } from './type';
 
-export const AnalystDragAndDrop = () => {
-  const { fileName, isDragging, setIsDragging, processFiles, reset } =
-    useFileStore();
+export const AnalystDragAndDrop = ({ onReset, showErrorStatus, isLoading }: AnalystDragAndDropProps) => {
+  const {
+    fileName,
+    isDragging,
+    setIsDragging,
+    processFiles
+  } = useFileStore();
 
   const {
     fileInputRef,
@@ -17,6 +22,8 @@ export const AnalystDragAndDrop = () => {
     onDragStateChange: setIsDragging,
   });
 
+  const handleReset = () => onReset();
+
   return (
     <AnalystDragAndDropUI
       fileName={fileName}
@@ -25,8 +32,10 @@ export const AnalystDragAndDrop = () => {
       onFileChange={onFileChange}
       onDrag={onDrag}
       onDrop={onDrop}
-      onReset={reset}
+      onReset={handleReset}
       inputRef={fileInputRef}
+      status={showErrorStatus ? "error" : fileName ? "done" : "default"}
+      isLoading={isLoading}
     />
   );
 };
