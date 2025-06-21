@@ -1,33 +1,31 @@
-import { type ButtonProps } from './type';
-import styles from './Button.module.css';
+import { type ButtonUIProps } from "./type";
+import styles from "./Button.module.css";
 
-export const Button = ({ 
-  type, 
-  isActive = false, 
+export const ButtonUI = ({
+  type,
+  isActive = false,
   children,
   onClick,
-  disabled = false
-}: ButtonProps) => {
-  return (
-    <button 
-      className={`
+  disabled = false,
+}: ButtonUIProps) => (
+  <button
+    className={`
         ${styles.button}
-        ${isActive
-          ? styles['button_no-active']
-          : type == 'send'
+        ${
+          isActive
+            ? styles["button_no-active"]
+            : type == "send"
             ? styles.button_send
-            : type == 'download'
-              ? styles.button_download
-              : type == 'clear'
-                ? styles.button_clear
-                : '' }
+            : type == "download"
+            ? styles.button_download
+            : type == "clear"
+            ? styles.button_clear
+            : ""
+        }
       `}
-      onClick={onClick}
-      disabled={disabled}
-    >
-      <div className={styles.button__wrapper}>
-        {children}
-      </div>
-    </button>
-  );
-}
+    onClick={onClick}
+    disabled={disabled}
+  >
+    <div className={styles.button__wrapper}>{children}</div>
+  </button>
+);

@@ -9,4 +9,5 @@ export * from './Status-Content';
 export * from './App-Header';
 export * from './App-Header-Nav-Link';
 export * from './Common-Section';
+export * from './Common-Page';
 export * from './Analyst-Drag-And-Drop';

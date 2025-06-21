@@ -1,11 +1,6 @@
-import styles from './ButtonDelete.module.css';
+import { type ButtonDeleteUIProps } from "./type.ts";
+import styles from "./ButtonDelete.module.css";
 
-type ButtonDeleteProps = {
-  onClick?: () => void;
-};
-
-export const ButtonDelete = ({ onClick }: ButtonDeleteProps) => {
-  return (
-    <button className={styles['button-delete']} onClick={onClick}></button>
-  );
-}
+export const ButtonDeleteUI = ({ onClick }: ButtonDeleteUIProps) => (
+  <button className={styles["button-delete"]} onClick={onClick}></button>
+);

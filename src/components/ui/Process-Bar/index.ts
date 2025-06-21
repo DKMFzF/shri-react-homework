@@ -1,1 +1,1 @@
-export { ProcessBar } from './ProcessBar';
+export { ProcessBarUI } from './ProcessBar';

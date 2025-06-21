@@ -1,5 +1,5 @@
 import { AnalystDragAndDrop } from '../../components';
-import { Button } from '../../components/ui';
+import { ButtonUI } from '../../components/ui';
 import styles from './AnalystPage.module.css';
 import { useFileStore } from '../../stories';
 
@@ -21,9 +21,9 @@ export const AnalystPage = () => {
 
         <AnalystDragAndDrop />
 
-        <Button type="send" isActive={!isUploaded}>
+        <ButtonUI type="send" isActive={!isUploaded}>
           Отправить
-        </Button>
+        </ButtonUI>
       </div>
 
       <div className={`${styles['analyst-page__highlights']} ${styles['analyst-page__highlights_none']}`}>

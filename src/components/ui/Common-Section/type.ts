@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
 
-export type CommonSectionProps = {
+export type CommonSectionUIProps = {
   children: ReactNode;
 }

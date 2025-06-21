@@ -1,6 +1,6 @@
-import { ButtonUpload, StatusContent } from "../";
+import { ButtonUploadUI, StatusContentUI } from "..";
 import { type AnalystDragAndDropUIProps } from "./type";
-import styles from "./AnalystDragAndDropUI.module.css";
+import styles from "./AnalystDragAndDrop.module.css";
 
 export const AnalystDragAndDropUI = ({
   fileName,
@@ -30,7 +30,7 @@ export const AnalystDragAndDropUI = ({
     />
     {fileName ? (
       <div className={styles.fileName}>
-        <StatusContent
+        <StatusContentUI
           statusText={fileName}
           descriptionText="файл загружен"
           onDelete={onReset}
@@ -38,7 +38,7 @@ export const AnalystDragAndDropUI = ({
       </div>
     ) : (
       <>
-        <ButtonUpload onClick={onButtonClick}>Загрузить файл</ButtonUpload>
+        <ButtonUploadUI onClick={onButtonClick}>Загрузить файл</ButtonUploadUI>
         <span>или перетащите сюда</span>
       </>
     )}

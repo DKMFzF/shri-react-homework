@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
 
-export type CommonPageProps = {
+export type CommonPageUIProps = {
   children: ReactNode;
 }

@@ -1,1 +1,1 @@
-export { ButtonUpload } from './ButtonUpload';
+export { ButtonUploadUI } from './ButtonUpload';
