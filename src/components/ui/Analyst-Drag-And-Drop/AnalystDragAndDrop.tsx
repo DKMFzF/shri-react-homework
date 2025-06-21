@@ -15,7 +15,7 @@ export const AnalystDragAndDropUI = ({
   <div
     className={`${styles["analyst-drag-and-drop__container"]} ${
       isDragging ? styles["analyst-drag-and-drop__container_dragging"] : ""
-    }`}
+    } ${fileName ? styles["analyst-drag-and-drop__container_uploaded"] : ""}`}
     onDragEnter={onDrag}
     onDragOver={onDrag}
     onDragLeave={onDrag}

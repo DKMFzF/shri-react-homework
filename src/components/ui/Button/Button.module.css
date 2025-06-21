@@ -12,6 +12,7 @@
 
 .button_no-active {
   background-color: rgba(192, 192, 192, 1);
+  cursor: default;
 }
 
 .button_send {

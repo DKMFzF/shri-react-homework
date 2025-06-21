@@ -21,6 +21,11 @@
   background-color: var(--color-access);
 }
 
+.analyst-drag-and-drop__container_uploaded {
+  background-color: transparent;
+  border: 1px solid var(--font-color-default);
+}
+
 .analyst-drag-and-drop__file-input {
   display: none;
 }
