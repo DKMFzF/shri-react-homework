@@ -24,7 +24,7 @@ export const ButtonUI = ({
         }
       `}
     onClick={onClick}
-    disabled={disabled}
+    disabled={disabled || isActive}
   >
     <div className={styles.button__wrapper}>{children}</div>
   </button>

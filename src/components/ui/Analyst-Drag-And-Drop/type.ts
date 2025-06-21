@@ -7,4 +7,6 @@ export type AnalystDragAndDropUIProps = {
   onDrop: (e: React.DragEvent<HTMLDivElement>) => void;
   onReset: () => void;
   inputRef: React.RefObject<HTMLInputElement | null>;
+  status?: "default" | "done" | "error" | string;
+  isLoading?: boolean;
 }
