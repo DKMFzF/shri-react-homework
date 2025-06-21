@@ -1,7 +1,7 @@
 
-type StatusTypes = 'done' | 'error';
+type StatusTypes = 'default' | 'done' | 'error';
 export type StatusContentProps = {
-  status: StatusTypes;
+  status?: StatusTypes;
   statusText: string;
   descriptionText: string;
   onDelete?: () => void;

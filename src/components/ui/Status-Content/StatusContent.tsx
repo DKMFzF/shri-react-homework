@@ -3,7 +3,7 @@ import { type StatusContentProps } from './type';
 import styles from './StatusContent.module.css';
 
 export const StatusContent = ({
-  status,
+  status='default',
   statusText,
   descriptionText,
   onDelete
@@ -16,7 +16,9 @@ export const StatusContent = ({
             ${styles["status-content__process-status"]}
             ${status == 'done'
               ? styles["status-content__process-status_done"]
-              : styles["status-content__process-status_error"]
+              : status == 'error'
+                ? styles["status-content__process-status_error"]
+                : styles['status-content__process-status_deafult']
             }
           `}
         >

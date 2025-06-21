@@ -57,7 +57,6 @@ export const AnalystDragAndDrop = () => {
       {fileName ? (
         <div className={styles.fileName}>
           <StatusContent
-            status="done"
             statusText={fileName}
             descriptionText="файл загружен"
             onDelete={reset}
