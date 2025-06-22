@@ -53,5 +53,5 @@ yarn build
 
 ### Дока бэка
 
-[ссылка на репу](https://github.com/etozhenerk/shri2025-back)
+[ссылка на репу](https://github.com/etozhenerk/shri2025-back)  
 [описание бэкенда](https://github.com/etozhenerk/shri2025-back/blob/main/readme.md)
