@@ -1,8 +1,10 @@
+import type { AggregatedData } from "./api";
+
 export type HistoryItem = {
   fileId: string;
   fileName: string;
   date: string;
   status: 'done' | 'error';
-  data: string;
+  data: AggregatedData | null;
   lastUpdated: number;
 };

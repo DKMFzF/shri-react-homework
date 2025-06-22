@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-
 import { type HistoryItem } from '../../utils/type/historyItem';
-import { HistoryCard, ButtonUI } from '../../components/ui';
+import { HistoryCard, ButtonUI, HighlightsModal, HighlightsCardContainerUI } from '../../components/ui';
 import styles from './HistoryPage.module.css';
 import { Link } from 'react-router-dom';
 
@@ -30,10 +29,13 @@ export const HistoryPage = () => {
   };
 
   const handleCardClick = (item: HistoryItem) => {
-    if (item.status === 'done') {
-      setSelectedItem(item);
-      setIsModalOpen(true);
-    }
+    setSelectedItem(item);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedItem(null);
   };
 
   return (
@@ -68,7 +70,21 @@ export const HistoryPage = () => {
         </ButtonUI>
       </div>
 
-      
+      <HighlightsModal isOpen={isModalOpen} onClose={closeModal}>
+        {selectedItem && selectedItem.data && (
+          <div className={styles['history-modal-content']}>
+            <h3>{selectedItem.fileName}</h3>
+            <p>Дата: {selectedItem.date}</p>
+            <p>Статус: {selectedItem.status}</p>
+            
+            <div className={styles['history-highlights-container']}>
+              <HighlightsCardContainerUI 
+                aggregatedData={selectedItem.data} 
+              />
+            </div>
+          </div>
+        )}
+      </HighlightsModal>
     </div>
   );
 };

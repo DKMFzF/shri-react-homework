@@ -55,7 +55,6 @@ export const AnalystPage = () => {
                 setError,
                 setIsLoading,
                 setAggregatedData,
-                aggregatedData
               )
             }
             disabled={isLoading || error}
