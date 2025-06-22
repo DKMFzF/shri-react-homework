@@ -3,11 +3,11 @@ import { type HistoryItem } from '../../utils/type/historyItem';
 import {
   HistoryCard,
   ButtonUI,
-  HighlightsModal,
   HighlightsCardContainerUI,
 } from '../../components/ui';
 import styles from './HistoryPage.module.css';
 import { Link } from 'react-router-dom';
+import { Modal } from '../../components/Modal';
 
 export const HistoryPage = () => {
   const [history, setHistory] = useState<HistoryItem[]>([]);
@@ -78,7 +78,10 @@ export const HistoryPage = () => {
         </ButtonUI>
       </div>
 
-      <HighlightsModal isOpen={isModalOpen} onClose={closeModal}>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      >
         {selectedItem && selectedItem.data && (
           <div className={styles['history-modal__highlights-container']}>
             <HighlightsCardContainerUI
@@ -87,7 +90,7 @@ export const HistoryPage = () => {
             />
           </div>
         )}
-      </HighlightsModal>
+      </Modal>
     </div>
   );
 };
