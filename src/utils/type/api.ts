@@ -14,4 +14,4 @@ export type AggregatedData = {
   average_spend_galactic?: number;
   big_spent_civ?: string;
   less_spent_civ?: string;
-}
+};

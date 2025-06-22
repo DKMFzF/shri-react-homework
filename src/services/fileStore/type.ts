@@ -10,4 +10,4 @@ export type FileState = {
   setIsUploaded: (isUploaded: boolean) => void;
   processFiles: (files: FileList) => void;
   reset: () => void;
-}
+};

@@ -1,11 +1,11 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom';
 
 import { AppLayout } from './App-Layout';
 import {
   AnalystPage,
   GeneratorPage,
   HistoryPage,
-  NotFoundPage
+  NotFoundPage,
 } from '../pages';
 
 export const router = createBrowserRouter([
@@ -13,10 +13,10 @@ export const router = createBrowserRouter([
     path: '/',
     element: <AppLayout />,
     children: [
-      { index: true, element: <AnalystPage/> },
+      { index: true, element: <AnalystPage /> },
       { path: 'generator', element: <GeneratorPage /> },
-      { path: 'history', element: <HistoryPage />},
-      { path: '*', element: <NotFoundPage/> }
-    ]
-  }
+      { path: 'history', element: <HistoryPage /> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
+  },
 ]);

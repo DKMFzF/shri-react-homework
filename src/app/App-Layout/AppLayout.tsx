@@ -1,5 +1,5 @@
-import { Suspense } from "react";
-import { Outlet } from "react-router-dom";
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
 import { AppHeader } from '../../components';
 import { CommonSectionUI, CommonPageUI } from '../../components/ui';
@@ -16,5 +16,5 @@ export const AppLayout = () => {
         </CommonSectionUI>
       </main>
     </CommonPageUI>
-  )
-}
+  );
+};

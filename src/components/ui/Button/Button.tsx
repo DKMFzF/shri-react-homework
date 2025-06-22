@@ -1,5 +1,5 @@
-import { type ButtonUIProps } from "./type";
-import styles from "./Button.module.css";
+import { type ButtonUIProps } from './type';
+import styles from './Button.module.css';
 
 export const ButtonUI = ({
   type,
@@ -13,14 +13,14 @@ export const ButtonUI = ({
         ${styles.button}
         ${
           isActive
-            ? styles["button_no-active"]
-            : type == "send"
-            ? styles.button_send
-            : type == "download"
-            ? styles.button_download
-            : type == "clear"
-            ? styles.button_clear
-            : ""
+            ? styles['button_no-active']
+            : type == 'send'
+              ? styles.button_send
+              : type == 'download'
+                ? styles.button_download
+                : type == 'clear'
+                  ? styles.button_clear
+                  : ''
         }
       `}
     onClick={onClick}

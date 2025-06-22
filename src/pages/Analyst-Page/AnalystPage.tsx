@@ -1,10 +1,10 @@
-import { getStatus } from "../../utils/helpers/getStatus";
-import { handleSubmitWrapper } from "../../utils/helpers/handleSubmitWrapperAggregatedData";
-import { AnalystDragAndDrop } from "../../components";
-import { ButtonUI, HighlightsCardContainerUI } from "../../components/ui";
-import { useAnalystStore, useFileStore } from "../../services";
+import { getStatus } from '../../utils/helpers/getStatus';
+import { handleSubmitWrapper } from '../../utils/helpers/handleSubmitWrapperAggregatedData';
+import { AnalystDragAndDrop } from '../../components';
+import { ButtonUI, HighlightsCardContainerUI } from '../../components/ui';
+import { useAnalystStore, useFileStore } from '../../services';
 
-import styles from "./AnalystPage.module.css";
+import styles from './AnalystPage.module.css';
 
 export const AnalystPage = () => {
   const isUploaded = useFileStore((state) => state.isUploaded);
@@ -27,15 +27,15 @@ export const AnalystPage = () => {
   };
 
   return (
-    <div className={styles["analyst-page"]}>
-      <div className={styles["analyst-page__controller"]}>
-        <span className={styles["analyst-page__description-text"]}>
-          Загрузите{" "}
-          <span className={styles["analyst-page__bold-text"]}>csv</span> файл и
-          получите{" "}
-          <span className={styles["analyst-page__bold-text"]}>
+    <div className={styles['analyst-page']}>
+      <div className={styles['analyst-page__controller']}>
+        <span className={styles['analyst-page__description-text']}>
+          Загрузите{' '}
+          <span className={styles['analyst-page__bold-text']}>csv</span> файл и
+          получите{' '}
+          <span className={styles['analyst-page__bold-text']}>
             полную информацию
-          </span>{" "}
+          </span>{' '}
           о нём за сверхнизкое время
         </span>
 
@@ -54,7 +54,7 @@ export const AnalystPage = () => {
                 file,
                 setError,
                 setIsLoading,
-                setAggregatedData,
+                setAggregatedData
               )
             }
             disabled={isLoading || error}
@@ -68,18 +68,16 @@ export const AnalystPage = () => {
         className={`
         ${
           !aggregatedData || error
-            ? styles["analyst-page__highlights_none"]
-            : styles["analyst-page__highlights"]
+            ? styles['analyst-page__highlights_none']
+            : styles['analyst-page__highlights']
         }`}
       >
         {aggregatedData && !error ? (
-          <HighlightsCardContainerUI
-            aggregatedData={aggregatedData}
-          />
+          <HighlightsCardContainerUI aggregatedData={aggregatedData} />
         ) : (
-          <div className={styles["analyst-page__none-text"]}>
-            Здесь{" "}
-            <span className={styles["analyst-page__none-text_nowrap"]}>
+          <div className={styles['analyst-page__none-text']}>
+            Здесь{' '}
+            <span className={styles['analyst-page__none-text_nowrap']}>
               появятся хайлайты
             </span>
           </div>

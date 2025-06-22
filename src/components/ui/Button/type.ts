@@ -7,4 +7,4 @@ export type ButtonUIProps = CommonBtnProps<ButtonTypes> & {
   onClick?: () => void;
   disabled?: boolean;
   children: ReactNode;
-}
+};

@@ -3,12 +3,12 @@ import { API_BASE_URL, handleResponse } from './baseApi';
 interface AggregateParams {
   rows: number;
   file: File;
-  onDataReceived?: (data: string, ) => void;
+  onDataReceived?: (data: string) => void;
 }
 
 async function aggregateData(params: AggregateParams): Promise<string> {
   const { rows, file, onDataReceived } = params;
-  
+
   const formData = new FormData();
   formData.append('file', file);
 
@@ -16,7 +16,7 @@ async function aggregateData(params: AggregateParams): Promise<string> {
     method: 'POST',
     body: formData,
     headers: {
-      'accept': 'application/json',
+      accept: 'application/json',
     },
   });
 

@@ -1,10 +1,10 @@
-import { useCallback, useRef } from "react";
+import { useCallback, useRef } from 'react';
 
 import { type UseDragAndDropProps } from './type';
 
 export const useDragAndDrop = ({
   onFilesSelected,
-  onDragStateChange
+  onDragStateChange,
 }: UseDragAndDropProps) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -24,7 +24,7 @@ export const useDragAndDrop = ({
     (e: React.DragEvent) => {
       e.preventDefault();
       e.stopPropagation();
-      const isDragging = e.type === "dragenter" || e.type === "dragover";
+      const isDragging = e.type === 'dragenter' || e.type === 'dragover';
       onDragStateChange?.(isDragging);
     },
     [onDragStateChange]
@@ -35,7 +35,7 @@ export const useDragAndDrop = ({
       e.preventDefault();
       e.stopPropagation();
       onDragStateChange?.(false);
-      
+
       if (e.dataTransfer.files?.length) {
         onFilesSelected(e.dataTransfer.files);
       }
@@ -48,6 +48,6 @@ export const useDragAndDrop = ({
     handleButtonClick,
     handleFileChange,
     handleDrag,
-    handleDrop
+    handleDrop,
   };
 };

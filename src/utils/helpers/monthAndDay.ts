@@ -1,6 +1,16 @@
 const monthNames = [
-  "января", "февраля", "марта", "апреля", "мая", "июня",
-  "июля", "августа", "сентября", "октября", "ноября", "декабря"
+  'января',
+  'февраля',
+  'марта',
+  'апреля',
+  'мая',
+  'июня',
+  'июля',
+  'августа',
+  'сентября',
+  'октября',
+  'ноября',
+  'декабря',
 ];
 
 export const getMonthAndDay = (dayOfYear: number): string => {
@@ -11,7 +21,7 @@ export const getMonthAndDay = (dayOfYear: number): string => {
   let day = dayOfYear;
 
   if (dayOfYear > 59) {
-    if ((dayOfYear % 4 === 0 && dayOfYear % 100 !== 0) || (dayOfYear % 400 === 0))
+    if ((dayOfYear % 4 === 0 && dayOfYear % 100 !== 0) || dayOfYear % 400 === 0)
       monthDays[1] = 29;
   }
 

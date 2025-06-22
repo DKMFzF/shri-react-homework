@@ -6,11 +6,10 @@ import { ButtonDeleteUI } from '../';
 import { type HighlightsModalProps } from './type';
 import styles from './HighlightsModal.module.css';
 
-
-export const HighlightsModal: React.FC<HighlightsModalProps> = ({ 
+export const HighlightsModal: React.FC<HighlightsModalProps> = ({
   isOpen,
   onClose,
-  children
+  children,
 }) => {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -41,8 +40,8 @@ export const HighlightsModal: React.FC<HighlightsModalProps> = ({
         <div className={styles['modal__cloase-btn']}>
           <ButtonDeleteUI onDelete={onClose}></ButtonDeleteUI>
         </div>
-        <div 
-          className={styles['modal__modal-content']} 
+        <div
+          className={styles['modal__modal-content']}
           onClick={(e) => e.stopPropagation()}
         >
           {children}

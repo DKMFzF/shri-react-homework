@@ -8,7 +8,7 @@ interface GenerateReportParams {
 
 async function generateReport(params: GenerateReportParams): Promise<string> {
   const { size, withErrors = false, maxSpend = 1000 } = params;
-  
+
   const queryParams = new URLSearchParams({
     size: size.toString(),
     withErrors: withErrors ? 'on' : 'off',
@@ -18,7 +18,7 @@ async function generateReport(params: GenerateReportParams): Promise<string> {
   const response = await fetch(`${API_BASE_URL}/report?${queryParams}`, {
     method: 'GET',
     headers: {
-      'accept': 'application/json',
+      accept: 'application/json',
     },
   });
 

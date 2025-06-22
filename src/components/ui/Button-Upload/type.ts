@@ -1,4 +1,4 @@
 export type ButtonUploadUIProps = {
   children: string;
-  onClick?: () => void
-}
+  onClick?: () => void;
+};

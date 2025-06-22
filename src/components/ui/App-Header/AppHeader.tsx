@@ -1,11 +1,11 @@
-import { AppHeaderNavLinkUI } from "../";
+import { AppHeaderNavLinkUI } from '../';
 import { type AppHedaerUIProps } from './type';
-import styles from "./AppHeader.module.css";
+import styles from './AppHeader.module.css';
 
 export const AppHeaderUI = ({ locationPath }: AppHedaerUIProps) => (
   <header className={styles.header}>
     <div className={styles.header__row}>
-      <div className={styles["header__meta-info"]}>
+      <div className={styles['header__meta-info']}>
         <img
           className={styles.header__logo}
           src="./logo-icon.svg"
@@ -14,19 +14,19 @@ export const AppHeaderUI = ({ locationPath }: AppHedaerUIProps) => (
           decoding="async"
         />
         <span
-          className={`${styles.header__text} ${styles["header__short-description"]}`}
+          className={`${styles.header__text} ${styles['header__short-description']}`}
         >
           Межгалактическая аналитика
         </span>
       </div>
 
-      <nav className={styles["header__top-menu"]}>
+      <nav className={styles['header__top-menu']}>
         <AppHeaderNavLinkUI
           url="/"
           pathImg="./analyst-icon.svg"
           altImg="загрзука"
           text="CSV Аналитик"
-          isActive={locationPath == "/"}
+          isActive={locationPath == '/'}
         />
 
         <AppHeaderNavLinkUI
@@ -34,7 +34,7 @@ export const AppHeaderUI = ({ locationPath }: AppHedaerUIProps) => (
           pathImg="./generator-icon.svg"
           altImg="генератор"
           text="CSV Генератор"
-          isActive={locationPath == "/generator"}
+          isActive={locationPath == '/generator'}
         />
 
         <AppHeaderNavLinkUI
@@ -42,7 +42,7 @@ export const AppHeaderUI = ({ locationPath }: AppHedaerUIProps) => (
           pathImg="./history-icon.svg"
           altImg="история"
           text="История"
-          isActive={locationPath == "/history"}
+          isActive={locationPath == '/history'}
         />
       </nav>
     </div>

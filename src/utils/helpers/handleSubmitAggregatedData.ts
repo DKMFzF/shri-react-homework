@@ -29,7 +29,7 @@ export const handleSubmit = async (
   } catch {
     setError(true);
     onComplete?.(false);
-    throw new Error("Ошибка обработки файла");
+    throw new Error('Ошибка обработки файла');
   } finally {
     setIsLoading(false);
   }

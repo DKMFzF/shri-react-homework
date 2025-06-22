@@ -1,7 +1,7 @@
-import { ButtonUploadUI, StatusContentUI, ProcessBarUI } from "..";
+import { ButtonUploadUI, StatusContentUI, ProcessBarUI } from '..';
 
-import { type AnalystDragAndDropUIProps } from "./type";
-import styles from "./AnalystDragAndDrop.module.css";
+import { type AnalystDragAndDropUIProps } from './type';
+import styles from './AnalystDragAndDrop.module.css';
 
 export const AnalystDragAndDropUI = ({
   fileName,
@@ -12,18 +12,19 @@ export const AnalystDragAndDropUI = ({
   onDrop,
   onReset,
   inputRef,
-  status = "default",
+  status = 'default',
   isLoading = false,
 }: AnalystDragAndDropUIProps) => (
   <div
-    className={`${styles["analyst-drag-and-drop__container"]} ${
-      isDragging ? styles["analyst-drag-and-drop__container_dragging"] : ""
+    className={`${styles['analyst-drag-and-drop__container']} ${
+      isDragging ? styles['analyst-drag-and-drop__container_dragging'] : ''
     } ${
       status === 'error'
         ? styles['analyst-drag-and-drop__container_error']
         : fileName
-        ? styles["analyst-drag-and-drop__container_uploaded"] : ""
-      }`}
+          ? styles['analyst-drag-and-drop__container_uploaded']
+          : ''
+    }`}
     onDragEnter={onDrag}
     onDragOver={onDrag}
     onDragLeave={onDrag}
@@ -33,7 +34,7 @@ export const AnalystDragAndDropUI = ({
       type="file"
       ref={inputRef}
       onChange={onFileChange}
-      className={styles["analyst-drag-and-drop__file-input"]}
+      className={styles['analyst-drag-and-drop__file-input']}
       accept=".csv"
     />
     {fileName ? (
@@ -44,11 +45,11 @@ export const AnalystDragAndDropUI = ({
           status={status}
           statusText={fileName}
           descriptionText={
-            status === "error"
-              ? "упс, не то..."
+            status === 'error'
+              ? 'упс, не то...'
               : status === 'done'
-              ? "готово!"
-              : 'файл был загружен'
+                ? 'готово!'
+                : 'файл был загружен'
           }
           onDelete={onReset}
         />

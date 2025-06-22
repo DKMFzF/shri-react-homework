@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 import { type HistoryItem } from '../../utils/type/historyItem';
-import { HistoryCard, ButtonUI, HighlightsModal, HighlightsCardContainerUI } from '../../components/ui';
+import {
+  HistoryCard,
+  ButtonUI,
+  HighlightsModal,
+  HighlightsCardContainerUI,
+} from '../../components/ui';
 import styles from './HistoryPage.module.css';
 import { Link } from 'react-router-dom';
 
@@ -10,15 +15,17 @@ export const HistoryPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    const savedHistory = JSON.parse(localStorage.getItem('analysisHistory') || '[]');
-    const sortedHistory = savedHistory.sort((a: HistoryItem, b: HistoryItem) => 
-      b.lastUpdated - a.lastUpdated
+    const savedHistory = JSON.parse(
+      localStorage.getItem('analysisHistory') || '[]'
+    );
+    const sortedHistory = savedHistory.sort(
+      (a: HistoryItem, b: HistoryItem) => b.lastUpdated - a.lastUpdated
     );
     setHistory(sortedHistory);
   }, []);
 
   const handleDelete = (fileId: string) => {
-    const newHistory = history.filter(item => item.fileId !== fileId);
+    const newHistory = history.filter((item) => item.fileId !== fileId);
     setHistory(newHistory);
     localStorage.setItem('analysisHistory', JSON.stringify(newHistory));
   };
@@ -59,11 +66,11 @@ export const HistoryPage = () => {
         )}
       </ul>
       <div className={styles['history-page__controls']}>
-        <Link to='/generator'>
-          <ButtonUI type='send'>Сгенерировать больше</ButtonUI>
+        <Link to="/generator">
+          <ButtonUI type="send">Сгенерировать больше</ButtonUI>
         </Link>
-        <ButtonUI 
-          type='clear' 
+        <ButtonUI
+          type="clear"
           onClick={handleDeleteAll}
           disabled={history.length === 0}
         >
@@ -74,7 +81,7 @@ export const HistoryPage = () => {
       <HighlightsModal isOpen={isModalOpen} onClose={closeModal}>
         {selectedItem && selectedItem.data && (
           <div className={styles['history-modal__highlights-container']}>
-            <HighlightsCardContainerUI 
+            <HighlightsCardContainerUI
               aggregatedData={selectedItem.data}
               isSpecial
             />

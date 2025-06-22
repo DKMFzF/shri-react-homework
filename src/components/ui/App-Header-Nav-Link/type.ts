@@ -1,4 +1,3 @@
-
 export type AppHeaderNavLinkUIProps = {
   url: string;
   pathImg: string;
@@ -6,4 +5,4 @@ export type AppHeaderNavLinkUIProps = {
   text: string;
   stylesClass?: string;
   isActive: boolean;
-}
+};

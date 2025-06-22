@@ -1,4 +1,4 @@
-import type { AggregatedData } from "./api";
+import type { AggregatedData } from './api';
 
 export type HistoryItem = {
   fileId: string;

@@ -8,5 +8,5 @@ export const App = () => {
     <StrictMode>
       <RouterProvider router={router} />
     </StrictMode>
-  )
-}
+  );
+};

@@ -7,9 +7,11 @@ export const HighlightsCardUI = ({
   isSpecial = false,
 }: HighlightsCardUIProps) => {
   return (
-    <article className={`${styles['highlights-card']} ${isSpecial ? styles['highlights-card_special'] : 'highlights-card_default'}`}>
+    <article
+      className={`${styles['highlights-card']} ${isSpecial ? styles['highlights-card_special'] : 'highlights-card_default'}`}
+    >
       <div className={styles['highlights-card__meaning']}>{meaning}</div>
       <div>{description}</div>
     </article>
   );
-}
+};

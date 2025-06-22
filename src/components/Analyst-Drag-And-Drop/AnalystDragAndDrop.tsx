@@ -1,20 +1,15 @@
-import { useFileStore } from "../../services";
-import { AnalystDragAndDropUI } from "../ui";
-import { useDragAndDrop } from "../../hooks";
+import { useFileStore } from '../../services';
+import { AnalystDragAndDropUI } from '../ui';
+import { useDragAndDrop } from '../../hooks';
 import { type AnalystDragAndDropProps } from './type';
 
 export const AnalystDragAndDrop = ({
   onReset,
   status,
-  isLoading
+  isLoading,
 }: AnalystDragAndDropProps) => {
-  const {
-    fileName,
-    isDragging,
-    setIsDragging,
-    processFiles,
-    error
-  } = useFileStore();
+  const { fileName, isDragging, setIsDragging, processFiles, error } =
+    useFileStore();
 
   const {
     fileInputRef,

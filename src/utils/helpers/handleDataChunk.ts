@@ -1,4 +1,4 @@
-import type { AggregatedData } from "../type/api";
+import type { AggregatedData } from '../type/api';
 
 export const handleDataChunk = (
   chunk: string,
@@ -13,6 +13,6 @@ export const handleDataChunk = (
       setAggregatedData(parsed);
     }
   } catch {
-    throw new Error("Ошибка обработк чанка");
+    throw new Error('Ошибка обработк чанка');
   }
 };

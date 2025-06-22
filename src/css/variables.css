@@ -1,7 +1,8 @@
 :root {
-  --font-family: 'Roboto', 'Inter', system-ui, -apple-system, 'Segoe UI',
-    'Helvetica Neue', arial, 'Noto Sans', 'Liberation Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-family:
+    'Roboto', 'Inter', system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue',
+    arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-size-standart-text-m: 30px;
   --font-size-standart-text-l: 35px;
   --font-size-bigger-text-xl: 40px;

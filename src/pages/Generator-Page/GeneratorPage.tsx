@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-import { ButtonUI, ProcessBarUI, StatusContentUI } from "../../components/ui";
-import { reportsApi } from "../../api/reportsApi";
-import { useGeneratorStore } from "../../services";
-import styles from "./GeneratorPage.module.css";
+import { ButtonUI, ProcessBarUI, StatusContentUI } from '../../components/ui';
+import { reportsApi } from '../../api/reportsApi';
+import { useGeneratorStore } from '../../services';
+import styles from './GeneratorPage.module.css';
 
 export const GeneratorPage = () => {
   const {
@@ -13,7 +13,7 @@ export const GeneratorPage = () => {
     setLoading,
     setError,
     setDownloadUrl,
-    reset
+    reset,
   } = useGeneratorStore();
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export const GeneratorPage = () => {
       const reportData = await reportsApi.generateReport({
         size: 0.1,
         withErrors: false,
-        maxSpend: 1000
+        maxSpend: 1000,
       });
 
       const blob = new Blob([reportData], { type: 'text/csv' });
@@ -44,7 +44,9 @@ export const GeneratorPage = () => {
       a.click();
       document.body.removeChild(a);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Произошла неизвестная ошибка');
+      setError(
+        err instanceof Error ? err.message : 'Произошла неизвестная ошибка'
+      );
     } finally {
       setLoading(false);
     }
@@ -72,13 +74,12 @@ export const GeneratorPage = () => {
   return (
     <div className={styles['generator-page']}>
       Сгенерируйте готовый csv-файл нажатием одной кнопки
-      
       {downloadUrl ? (
         <>
           <StatusContentUI
-            status="done" 
-            statusText="Done!" 
-            descriptionText="файл сгенерирован!" 
+            status="done"
+            statusText="Done!"
+            descriptionText="файл сгенерирован!"
             onDelete={handleDelete}
           />
         </>

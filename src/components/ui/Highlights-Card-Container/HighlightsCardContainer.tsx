@@ -3,7 +3,10 @@ import { getMonthAndDay } from '../../../utils/helpers/monthAndDay';
 import { HighlightsCardUI } from '../';
 import { type HighlightsCardContainerUIProps } from './type';
 
-export const HighlightsCardContainerUI = ({ aggregatedData, isSpecial = false }: HighlightsCardContainerUIProps) => {
+export const HighlightsCardContainerUI = ({
+  aggregatedData,
+  isSpecial = false,
+}: HighlightsCardContainerUIProps) => {
   return (
     <>
       <HighlightsCardUI
@@ -60,4 +63,4 @@ export const HighlightsCardContainerUI = ({ aggregatedData, isSpecial = false }:
       )}
     </>
   );
-}
+};

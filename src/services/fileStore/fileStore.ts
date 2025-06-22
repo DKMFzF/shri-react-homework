@@ -14,29 +14,30 @@ export const useFileStore = create<FileState>((set) => ({
   processFiles: (files) => {
     const file = files[0];
     const isValid = file.name.toLowerCase().endsWith('.csv');
-    
+
     if (isValid) {
-      set({ 
-        fileName: file.name, 
+      set({
+        fileName: file.name,
         file: file,
         isUploaded: true,
-        error: false
+        error: false,
       });
-      console.log("Загружен файл:", file);
+      console.log('Загружен файл:', file);
     } else {
       set({
         fileName: file.name,
         file: null,
         isUploaded: false,
-        error: true
+        error: true,
       });
     }
   },
-  reset: () => set({ 
-    fileName: null, 
-    file: null,
-    isDragging: false, 
-    isUploaded: false,
-    error: false
-  })
+  reset: () =>
+    set({
+      fileName: null,
+      file: null,
+      isDragging: false,
+      isUploaded: false,
+      error: false,
+    }),
 }));

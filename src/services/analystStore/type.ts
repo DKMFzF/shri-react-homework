@@ -8,4 +8,4 @@ export type AnalystState = {
   setIsLoading: (loading: boolean) => void;
   setError: (error: boolean) => void;
   reset: () => void;
-}
+};
