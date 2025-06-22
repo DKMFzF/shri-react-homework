@@ -26,12 +26,10 @@ export const handleSubmit = async (
       onDataReceived: (chunk) => handleDataChunk(chunk, setAggregatedData),
     });
     onComplete?.(true);
-  } catch (err) {
+  } catch {
     setError(true);
-    console.log(
-      err instanceof Error ? err.message : "Ошибка обработки файла"
-    );
     onComplete?.(false);
+    throw new Error("Ошибка обработки файла");
   } finally {
     setIsLoading(false);
   }

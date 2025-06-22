@@ -28,7 +28,7 @@ export const GeneratorPage = () => {
 
     try {
       const reportData = await reportsApi.generateReport({
-        size: 0.02,
+        size: 0.1,
         withErrors: false,
         maxSpend: 1000
       });
