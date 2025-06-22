@@ -1,12 +1,13 @@
-export interface FileState {
+export type FileState = {
   fileName: string | null;
-  file: File | null; // Добавляем поле для хранения самого файла
+  file: File | null;
   isDragging: boolean;
   isUploaded: boolean;
-  setFileName: (name: string | null) => void;
-  setFile: (file: File | null) => void; // Добавляем метод для установки файла
-  setIsDragging: (dragging: boolean) => void;
-  setIsUploaded: (uploaded: boolean) => void;
+  error?: boolean;
+  setFileName: (fileName: string | null) => void;
+  setFile: (file: File | null) => void;
+  setIsDragging: (isDragging: boolean) => void;
+  setIsUploaded: (isUploaded: boolean) => void;
   processFiles: (files: FileList) => void;
   reset: () => void;
 }

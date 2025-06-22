@@ -24,7 +24,7 @@ export const StatusContentUI = ({
       >
         {statusText}
       </div>
-      <ButtonDeleteUI onClick={onDelete} />
+      <ButtonDeleteUI onDelete={onDelete} />
     </div>
     <div
       className={`

@@ -1,3 +1,5 @@
+type ButtonVersionType = 'default' | 'trash';
 export type ButtonDeleteUIProps = {
-  onClick?: () => void;
+  version?: ButtonVersionType;
+  onDelete?: () => void;
 };
