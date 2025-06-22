@@ -1,4 +1,4 @@
-import type { AggregatedData } from '../type/api';
+import type { AggregatedData } from '../utils/type/api';
 
 export const handleDataChunk = (
   chunk: string,

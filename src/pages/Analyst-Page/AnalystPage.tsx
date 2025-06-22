@@ -1,8 +1,8 @@
 import { getStatus } from '../../utils/helpers/getStatus';
-import { handleSubmitWrapper } from '../../utils/helpers/handleSubmitWrapperAggregatedData';
+import { handleSubmitWrapper } from '../../services/handleSubmitWrapperAggregatedData';
 import { AnalystDragAndDrop } from '../../components';
 import { ButtonUI, HighlightsCardContainerUI } from '../../components/ui';
-import { useAnalystStore, useFileStore } from '../../services';
+import { useAnalystStore, useFileStore } from '../../store';
 
 import styles from './AnalystPage.module.css';
 

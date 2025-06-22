@@ -1,4 +1,4 @@
-import { useFileStore } from '../../services';
+import { useFileStore } from '../../store';
 import { AnalystDragAndDropUI } from '../ui';
 import { useDragAndDrop } from '../../hooks';
 import { type AnalystDragAndDropProps } from './type';

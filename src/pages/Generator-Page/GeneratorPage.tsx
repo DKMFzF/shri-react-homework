@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { ButtonUI, ProcessBarUI, StatusContentUI } from '../../components/ui';
 import { reportsApi } from '../../api/reportsApi';
-import { useGeneratorStore } from '../../services';
+import { useGeneratorStore } from '../../store';
 import styles from './GeneratorPage.module.css';
 
 export const GeneratorPage = () => {
@@ -28,7 +28,7 @@ export const GeneratorPage = () => {
 
     try {
       const reportData = await reportsApi.generateReport({
-        size: 0.1,
+        size: 0.02,
         withErrors: false,
         maxSpend: 1000,
       });

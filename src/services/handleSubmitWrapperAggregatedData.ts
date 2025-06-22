@@ -1,4 +1,4 @@
-import type { AggregatedData } from '../type/api';
+import type { AggregatedData } from '../utils/type/api';
 import { handleSubmit } from './handleSubmitAggregatedData';
 
 export const handleSubmitWrapper = async (

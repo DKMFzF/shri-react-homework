@@ -1,5 +1,5 @@
 import { ceilGalacticValue } from '../../../utils/helpers/ceilGalacticValue';
-import { getMonthAndDay } from '../../../utils/helpers/monthAndDay';
+import { getMonthAndDay } from '../../../services/monthAndDay';
 import { HighlightsCardUI } from '../';
 import { type HighlightsCardContainerUIProps } from './type';
 
