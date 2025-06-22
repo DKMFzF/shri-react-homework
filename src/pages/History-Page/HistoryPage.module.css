@@ -1,5 +1,14 @@
-.history-page {
+.history-page__history-list {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  align-items: center;
+}
+
+.history-page__controls {
+  margin-top: 40px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  gap: 20px;
 }

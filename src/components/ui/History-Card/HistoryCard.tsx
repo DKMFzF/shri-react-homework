@@ -7,10 +7,11 @@ export const HistoryCard = ({
   fileName,
   data,
   status,
-  onClick,
+  onDelete,
+  onClick
 }: HistoryCardProps) => {
   return (
-    <div className={styles["history-card"]}>
+    <article className={styles["history-card"]} onClick={onClick}>
       <div className={styles["history-card__info-container"]}>
         <div className={styles["history-card__info-chunck-container"]}>
           <img src="./file-icon.svg" alt="file icon" />
@@ -49,7 +50,7 @@ export const HistoryCard = ({
           </>
         )}
       </div>
-      <ButtonDeleteUI version="trash" onClick={onClick} />
-    </div>
+      <ButtonDeleteUI version="trash" onDelete={onDelete} />
+    </article>
   );
 };

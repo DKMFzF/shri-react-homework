@@ -13,4 +13,5 @@ export * from './Common-Page';
 export * from './Analyst-Drag-And-Drop';
 export * from './Highlights-Card';
 export * from './Highlights-Card-Container';
+export * from './Highlights-Modal';
 export * from './History-Card';

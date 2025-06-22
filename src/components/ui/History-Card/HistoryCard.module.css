@@ -1,6 +1,7 @@
 @import url(../../../css/variables.css);
 
 .history-card {
+  width: -webkit-fill-available;
   display: flex;
   flex-direction: row;
   align-items: center;
