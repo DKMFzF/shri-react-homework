@@ -40,23 +40,24 @@ export const HistoryPage = () => {
 
   return (
     <div className={styles['history-page']}>
-      <div className={styles['history-page__history-list']}>
+      <ul className={styles['history-page__history-list']}>
         {history.map((item, index) => (
-          <HistoryCard
-            key={index}
-            fileName={item.fileName}
-            data={item.date}
-            status={item.status}
-            onDelete={() => handleDelete(item.fileId)}
-            onClick={() => handleCardClick(item)}
-          />
+          <li key={index} className={styles['history-page__list-item']}>
+            <HistoryCard
+              fileName={item.fileName}
+              data={item.date}
+              status={item.status}
+              onDelete={() => handleDelete(item.fileId)}
+              onClick={() => handleCardClick(item)}
+            />
+          </li>
         ))}
         {history.length === 0 && (
           <div className={styles['history-page__empty']}>
             История аналитики пуста
           </div>
         )}
-      </div>
+      </ul>
       <div className={styles['history-page__controls']}>
         <Link to='/generator'>
           <ButtonUI type='send'>Сгенерировать больше</ButtonUI>
@@ -74,7 +75,8 @@ export const HistoryPage = () => {
         {selectedItem && selectedItem.data && (
           <div className={styles['history-modal__highlights-container']}>
             <HighlightsCardContainerUI 
-              aggregatedData={selectedItem.data} 
+              aggregatedData={selectedItem.data}
+              isSpecial
             />
           </div>
         )}

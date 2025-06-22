@@ -1,5 +1,6 @@
 import type { AggregatedData } from "../../../utils/type/api"
 
 export type HighlightsCardContainerUIProps = {
-  aggregatedData: AggregatedData
+  aggregatedData: AggregatedData;
+  isSpecial?: boolean;
 }

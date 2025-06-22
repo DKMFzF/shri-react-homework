@@ -33,7 +33,9 @@ export const useDragAndDrop = ({
   const handleDrop = useCallback(
     (e: React.DragEvent) => {
       e.preventDefault();
+      e.stopPropagation();
       onDragStateChange?.(false);
+      
       if (e.dataTransfer.files?.length) {
         onFilesSelected(e.dataTransfer.files);
       }

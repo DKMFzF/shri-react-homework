@@ -11,8 +11,11 @@ export const HistoryCard = ({
   onClick
 }: HistoryCardProps) => {
   return (
-    <article className={styles["history-card"]} onClick={onClick}>
-      <div className={styles["history-card__info-container"]}>
+    <article className={styles["history-card"]}>
+      <div className={`
+        ${styles["history-card__info-container"]}
+        ${status === 'done' ? styles['history-card__info-container_active'] : ''}  
+      `} onClick={status === 'done' ? onClick : undefined}>
         <div className={styles["history-card__info-chunck-container"]}>
           <img src="./file-icon.svg" alt="file icon" />
           <span>{fileName}</span>

@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.history-page__list-item {
+  width: 100%;
+}
+
 .history-page__controls {
   margin-top: 40px;
   display: flex;

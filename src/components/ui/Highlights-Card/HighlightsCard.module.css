@@ -1,7 +1,5 @@
 @import url(../../../css/variables.css);
 
-/* --font-size-bigger-text-xl */
-
 .highlights-card {
   padding: 20px;
   display: flex;
@@ -20,4 +18,12 @@
 
 .highlights-card__description {
   font-size: 20px;
+}
+
+.highlights-card_default {
+  background-color: white;
+}
+
+.highlights-card_special {
+  background-color: var(--color-dark-bg);
 }

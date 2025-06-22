@@ -67,17 +67,15 @@ export const AnalystPage = () => {
       <div
         className={`
         ${
-          !aggregatedData
+          !aggregatedData || error
             ? styles["analyst-page__highlights_none"]
             : styles["analyst-page__highlights"]
         }`}
       >
-        {aggregatedData ? (
-          <>
-            <HighlightsCardContainerUI
-              aggregatedData={aggregatedData}
-            ></HighlightsCardContainerUI>
-          </>
+        {aggregatedData && !error ? (
+          <HighlightsCardContainerUI
+            aggregatedData={aggregatedData}
+          />
         ) : (
           <div className={styles["analyst-page__none-text"]}>
             Здесь{" "}

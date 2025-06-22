@@ -12,7 +12,8 @@ export const AnalystDragAndDrop = ({
     fileName,
     isDragging,
     setIsDragging,
-    processFiles
+    processFiles,
+    error
   } = useFileStore();
 
   const {
@@ -27,6 +28,7 @@ export const AnalystDragAndDrop = ({
   });
 
   const handleReset = () => onReset();
+  const combinedStatus = error ? 'error' : status;
 
   return (
     <AnalystDragAndDropUI
@@ -38,7 +40,7 @@ export const AnalystDragAndDrop = ({
       onDrop={onDrop}
       onReset={handleReset}
       inputRef={fileInputRef}
-      status={status}
+      status={combinedStatus}
       isLoading={isLoading}
     />
   );

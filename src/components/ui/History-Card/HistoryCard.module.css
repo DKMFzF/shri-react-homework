@@ -19,6 +19,10 @@
   border-radius: 40px;
 }
 
+.history-card__info-container_active {
+  cursor: pointer;
+}
+
 .history-card__info-chunck-container {
   display: flex;
   justify-content: center;
