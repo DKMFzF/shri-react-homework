@@ -3,7 +3,7 @@ import styles from './HighlightsCard.module.css';
 
 export const HighlightsCardUI = ({
   meaning,
-  description
+  description,
 }: HighlightsCardUIProps) => {
   return (
     <article className={styles['highlights-card']}>

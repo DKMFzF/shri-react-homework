@@ -72,16 +72,10 @@ export const HistoryPage = () => {
 
       <HighlightsModal isOpen={isModalOpen} onClose={closeModal}>
         {selectedItem && selectedItem.data && (
-          <div className={styles['history-modal-content']}>
-            <h3>{selectedItem.fileName}</h3>
-            <p>Дата: {selectedItem.date}</p>
-            <p>Статус: {selectedItem.status}</p>
-            
-            <div className={styles['history-highlights-container']}>
-              <HighlightsCardContainerUI 
-                aggregatedData={selectedItem.data} 
-              />
-            </div>
+          <div className={styles['history-modal__highlights-container']}>
+            <HighlightsCardContainerUI 
+              aggregatedData={selectedItem.data} 
+            />
           </div>
         )}
       </HighlightsModal>

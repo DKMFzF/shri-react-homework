@@ -1,4 +1,4 @@
-.modalOverlay {
+.modal__overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,29 +11,19 @@
   z-index: 1000;
 }
 
-.modalContent {
+.modal__modal-content {
+  box-sizing: border-box;
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 500px;
-  width: 90%;
+  padding: 40px;
+  border-radius: 45px;
+  width: 1000px;
   position: relative;
-  max-height: 80vh;
+  max-height: 60vh;
   overflow-y: auto;
 }
 
-.modalClose {
+.modal__cloase-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  padding: 0;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 15%;
+  right: 20%;
 }

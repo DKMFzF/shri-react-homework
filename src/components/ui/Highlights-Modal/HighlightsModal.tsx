@@ -1,17 +1,16 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import styles from './HighlightsModal.module.css'; // Создайте этот файл
 
-interface HighlightsModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children?: React.ReactNode;
-}
+import { ButtonDeleteUI } from '../';
+
+import { type HighlightsModalProps } from './type';
+import styles from './HighlightsModal.module.css';
+
 
 export const HighlightsModal: React.FC<HighlightsModalProps> = ({ 
-  isOpen, 
-  onClose, 
-  children 
+  isOpen,
+  onClose,
+  children
 }) => {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -37,13 +36,17 @@ export const HighlightsModal: React.FC<HighlightsModalProps> = ({
   if (!modalRoot) return null;
 
   return ReactDOM.createPortal(
-    <div className={styles.modalOverlay} onClick={onClose}>
-      <div 
-        className={styles.modalContent} 
-        onClick={(e) => e.stopPropagation()}
-      >
-        <button className={styles.modalClose} onClick={onClose}>×</button>
-        {children}
+    <div className={styles.modal__overlay} onClick={onClose}>
+      <div>
+        <div className={styles['modal__cloase-btn']}>
+          <ButtonDeleteUI onDelete={onClose}></ButtonDeleteUI>
+        </div>
+        <div 
+          className={styles['modal__modal-content']} 
+          onClick={(e) => e.stopPropagation()}
+        >
+          {children}
+        </div>
       </div>
     </div>,
     modalRoot

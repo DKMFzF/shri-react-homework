@@ -12,3 +12,9 @@
   align-items: center;
   gap: 20px;
 }
+
+.history-modal__highlights-container {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
