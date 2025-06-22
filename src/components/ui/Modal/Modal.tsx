@@ -5,11 +5,7 @@ import { ButtonDeleteUI } from '../';
 import styles from './Modal.module.css';
 import { type ModalUIProps } from './type';
 
-export const ModalUI = ({
-  onClose,
-  children,
-  modalRoot
-}: ModalUIProps) => (
+export const ModalUI = ({ onClose, children, modalRoot }: ModalUIProps) =>
   createPortal(
     <div className={styles.modal__overlay} onClick={onClose}>
       <div>
@@ -25,5 +21,4 @@ export const ModalUI = ({
       </div>
     </div>,
     modalRoot
-  )
-);
+  );

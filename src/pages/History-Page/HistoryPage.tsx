@@ -78,10 +78,7 @@ export const HistoryPage = () => {
         </ButtonUI>
       </div>
 
-      <Modal
-        isOpen={isModalOpen}
-        onClose={closeModal}
-      >
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
         {selectedItem && selectedItem.data && (
           <div className={styles['history-modal__highlights-container']}>
             <HighlightsCardContainerUI
