@@ -24,19 +24,6 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-
-    "paths": {
-      "@src": ["src"],
-      "@images": ["src/images"],
-      "@components": ["src/components"],
-      "@ui": ["src/components/ui"],
-      "@pages": ["src/pages"],
-
-      "@services": ["src/services"],
-      "@stories": ["src/stories"],
-      
-      "@utils": ["src/utils"],
-    }
   },
   "include": ["src"]
 }

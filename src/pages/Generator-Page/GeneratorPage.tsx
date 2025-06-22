@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 
 import { ButtonUI, ProcessBarUI, StatusContentUI } from "../../components/ui";
-import { reportsApi } from "../../services/reportsApi";
-import { useGeneratorStore } from "../../stories";
+import { reportsApi } from "../../api/reportsApi";
+import { useGeneratorStore } from "../../services";
 import styles from "./GeneratorPage.module.css";
 
 export const GeneratorPage = () => {

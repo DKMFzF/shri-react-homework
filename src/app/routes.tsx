@@ -6,10 +6,8 @@ import {
   GeneratorPage,
   HistoryPage,
   NotFoundPage
-} from '@pages';
+} from '../pages';
 
-// такого подключение роутинга в лекциях не было
-// но это всё равно часть react-router-dom
 export const router = createBrowserRouter([
   {
     path: '/',

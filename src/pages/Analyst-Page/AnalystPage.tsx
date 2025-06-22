@@ -2,7 +2,7 @@ import { getStatus } from "../../utils/helpers/getStatus";
 import { handleSubmitWrapper } from "../../utils/helpers/handleSubmitWrapperAggregatedData";
 import { AnalystDragAndDrop } from "../../components";
 import { ButtonUI, HighlightsCardContainerUI } from "../../components/ui";
-import { useAnalystStore, useFileStore } from "../../stories";
+import { useAnalystStore, useFileStore } from "../../services";
 
 import styles from "./AnalystPage.module.css";
 

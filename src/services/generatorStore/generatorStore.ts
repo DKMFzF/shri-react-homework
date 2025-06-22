@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 
-import { type GeneratorState } from './type';
+import { type GeneratorStateProps } from './type';
 
-export const useGeneratorStore = create<GeneratorState>((set) => ({
+export const useGeneratorStore = create<GeneratorStateProps>((set) => ({
   isLoading: false,
   error: null,
   downloadUrl: null,

@@ -1,4 +1,4 @@
-export interface GeneratorState {
+export interface GeneratorStateProps {
   isLoading: boolean;
   error: string | null;
   downloadUrl: string | null;

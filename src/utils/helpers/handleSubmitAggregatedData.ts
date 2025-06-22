@@ -1,6 +1,6 @@
 import { handleDataChunk } from './handleDataChunk';
 import { type AggregatedData } from '../type/api';
-import { aggregateApi } from '../../services/aggregateApi';
+import { aggregateApi } from '../../api/aggregateApi';
 
 export const handleSubmit = async (
   file: File | null,
