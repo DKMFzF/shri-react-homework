@@ -1,13 +1,13 @@
 @import url(../../../css/variables.css);
 
 .common-page {
-  min-height: 100vh;
   background-color: var(--color-default-bg);
 }
 
 .common-page__content-wrapper {
   --indent-common-page: 40px;
   
+  height: calc(100vh - 80px);
   margin-inline: var(--indent-common-page);
   padding-block: var(--indent-common-page);
 }
