@@ -1,5 +1,5 @@
-import { getStatus } from '../../utils/helpers/getStatus';
-import { handleSubmit } from '../../utils/helpers/handleSubmitAggregatedData';
+import { getStatus } from "../../utils/helpers/getStatus";
+import { handleSubmitWrapper } from "../../utils/helpers/handleSubmitWrapperAggregatedData";
 import { AnalystDragAndDrop } from "../../components";
 import { ButtonUI, HighlightsCardContainerUI } from "../../components/ui";
 import { useAnalystStore, useFileStore } from "../../stories";
@@ -41,12 +41,7 @@ export const AnalystPage = () => {
 
         <AnalystDragAndDrop
           onReset={handleReset}
-          status={getStatus(
-            error,
-            isLoading,
-            aggregatedData,
-            file
-          )}
+          status={getStatus(error, isLoading, aggregatedData, file)}
           isLoading={isLoading}
         />
 
@@ -54,7 +49,15 @@ export const AnalystPage = () => {
           <ButtonUI
             type="send"
             isActive={!isUploaded}
-            onClick={() => handleSubmit(file, setError, setIsLoading, setAggregatedData)}
+            onClick={() =>
+              handleSubmitWrapper(
+                file,
+                setError,
+                setIsLoading,
+                setAggregatedData,
+                aggregatedData
+              )
+            }
             disabled={isLoading || error}
           >
             Отправить
@@ -72,7 +75,9 @@ export const AnalystPage = () => {
       >
         {aggregatedData ? (
           <>
-            <HighlightsCardContainerUI aggregatedData={aggregatedData}></HighlightsCardContainerUI>
+            <HighlightsCardContainerUI
+              aggregatedData={aggregatedData}
+            ></HighlightsCardContainerUI>
           </>
         ) : (
           <div className={styles["analyst-page__none-text"]}>
