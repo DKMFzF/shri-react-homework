@@ -3,7 +3,7 @@ import { API_BASE_URL, handleResponse } from './baseApi';
 interface AggregateParams {
   rows: number;
   file: File;
-  onDataReceived?: (data: string) => void;
+  onDataReceived?: (data: string, ) => void;
 }
 
 async function aggregateData(params: AggregateParams): Promise<string> {
