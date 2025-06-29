@@ -1,11 +1,11 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('App Navigation', () => {
+test.describe('Навигация', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
   });
 
-  test('should correctly highlight active nav items', async ({ page }) => {
+  test('должны корректно происходит навигация по сайту', async ({ page }) => {
     const analystLink = page.getByRole('button', { name: 'CSV Аналитик' });
     await expect(analystLink).toHaveClass(/header__nav-link-wrapper_active/);
     

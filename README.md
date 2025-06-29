@@ -79,18 +79,18 @@ npm run test
 
 #### Описание тестов
 
-- Тестирование states
+- Тестирование states (unit-test)
 
   - `generatorStore.test.ts` - тестирования state генерации
   - `fileStore.test.ts` - тестирование state файла
   - `analystStore.test.ts` - тестирование state аналитики
 
-- Тестирование запросов к API
+- Тестирование запросов к API (unit-test)
   - `baseApi.test.ts` - тестирование базовго api
   - `reportsApi.test.ts` - тестирование reportsApi
   - `aggregateApi.test.ts` - тестирование aggregateApi
 
-- Тестирование функциональных требований
+- Тестирование функциональных требований (unit-test)
   - Drag&Drop
     - `useDragAndDrop.test.ts` - тестирование хука drag&drop
     - `AnalystDragAndDrop.test.tsx` - тестирование компонента отвечающего за Drag&Drop. **В тестирование входит загрука файла перетаскиванием и загрузка на кнопку.**
@@ -99,4 +99,7 @@ npm run test
     - `handleDataChunk.test.ts` - тестирование хэдлера разбиения на чанки 
     - `handleSubmitWrapperAggregatedData.test.ts` - тестирование ъэндлера агрегации даных. В тестирование входит и загрузка в localStorage (localStorageMock)
 
-  - 
+- Тестирование Навигации (e2e-test)
+  - `navigation.spec.ts` - тестирование переключение страниц
+
+- Тестирование Loading-status
