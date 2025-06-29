@@ -103,3 +103,4 @@ npm run test
   - `navigation.spec.ts` - тестирование переключение страниц
 
 - Тестирование Loading-status
+  - `loader.spec.ts` - тестирование отображение прогресса обработки
