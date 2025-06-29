@@ -12,6 +12,12 @@ vi.mock('../../ui', () => ({
       <div role="region" data-testid="drop-region" onDrop={props.onDrop}>
         Drop zone
       </div>
+      <button 
+        onClick={props.onButtonClick} 
+        data-testid="upload-button"
+      >
+        Загрузить файл
+      </button>
       <button onClick={props.onReset} data-testid="reset-button">
         Reset
       </button>
@@ -158,6 +164,52 @@ describe('AnalystDragAndDrop', () => {
     expect(mockUseDragAndDrop).toHaveBeenCalledWith({
       onFilesSelected: mockProcessFiles,
       onDragStateChange: mockSetIsDragging,
+    });
+  });
+
+  it('обрабатывает загрузку файлов через кнопку выбора файла', async () => {
+    const mockFiles = [
+      new File(['content'], 'test.csv', { type: 'text/csv' }),
+    ] as unknown as FileList;
+
+    const mockClick = vi.fn();
+
+    const mockHandleButtonClick = vi.fn(() => {
+      mockFileInputRef.current.click = mockClick;
+      mockClick();
+    });
+
+    const mockHandleFileChange = vi.fn((e) => {
+      if (e.target.files?.length) {
+        mockProcessFiles(e.target.files);
+      }
+    });
+
+    mockUseDragAndDrop.mockReturnValueOnce({
+      fileInputRef: mockFileInputRef,
+      handleButtonClick: mockHandleButtonClick,
+      handleFileChange: mockHandleFileChange,
+      handleDrag: vi.fn(),
+      handleDrop: vi.fn(),
+    });
+
+    render(
+      <AnalystDragAndDrop onReset={mockOnReset} status="ready" isLoading={false} />
+    );
+
+    const uploadButton = screen.getByTestId('upload-button');
+    fireEvent.click(uploadButton);
+    
+    expect(mockHandleButtonClick).toHaveBeenCalled();
+    
+    expect(mockClick).toHaveBeenCalled();
+
+    const fileInput = screen.getByTestId('file-input');
+    fireEvent.change(fileInput, { target: { files: mockFiles } });
+
+    await waitFor(() => {
+      expect(mockHandleFileChange).toHaveBeenCalled();
+      expect(mockProcessFiles).toHaveBeenCalledWith(mockFiles);
     });
   });
 });
