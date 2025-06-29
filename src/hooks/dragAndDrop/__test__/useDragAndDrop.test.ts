@@ -36,7 +36,6 @@ describe('useDragAndDrop', () => {
       const { result } = setup();
       const mockClick = vi.fn();
       
-      // Mock the input element
       result.current.fileInputRef.current = {
         click: mockClick,
       } as unknown as HTMLInputElement;
