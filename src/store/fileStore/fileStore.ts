@@ -22,7 +22,6 @@ export const useFileStore = create<FileState>((set) => ({
         isUploaded: true,
         error: false,
       });
-      console.log('Загружен файл:', file);
     } else {
       set({
         fileName: file.name,
