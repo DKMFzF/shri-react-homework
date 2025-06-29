@@ -99,4 +99,4 @@ npm run test
     - `handleDataChunk.test.ts` - тестирование хэдлера разбиения на чанки 
     - `handleSubmitWrapperAggregatedData.test.ts` - тестирование ъэндлера агрегации даных. В тестирование входит и загрузка в localStorage (localStorageMock)
 
-  
+  - 
