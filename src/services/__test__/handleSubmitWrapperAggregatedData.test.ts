@@ -57,7 +57,6 @@ describe('handleSubmitWrapper', () => {
       mockSetAggregatedData
     );
 
-    // Проверяем вызовы
     expect(handleSubmit).toHaveBeenCalled();
     expect(localStorageMock.setItem).toHaveBeenCalled();
     

@@ -85,8 +85,18 @@ npm run test
   - `fileStore.test.ts` - тестирование state файла
   - `analystStore.test.ts` - тестирование state аналитики
 
+- Тестирование запросов к API
+  - `baseApi.test.ts` - тестирование базовго api
+  - `reportsApi.test.ts` - тестирование reportsApi
+  - `aggregateApi.test.ts` - тестирование aggregateApi
+
 - Тестирование функциональных требований
-  - `useDragAndDrop.test.ts` - тестирование хука drag&drop
-  - `AnalystDragAndDrop.test.tsx` - тестирование компонента отвечающего за Drag&Drop. **В тестирование входит загрука файла перетаскиванием и загрузка на кнопку.**
-  - ``
+  - Drag&Drop
+    - `useDragAndDrop.test.ts` - тестирование хука drag&drop
+    - `AnalystDragAndDrop.test.tsx` - тестирование компонента отвечающего за Drag&Drop. **В тестирование входит загрука файла перетаскиванием и загрузка на кнопку.**
+
+  - localStorage и хэндлеры агрегации данных
+    - `handleDataChunk.test.ts` - тестирование хэдлера разбиения на чанки 
+    - `handleSubmitWrapperAggregatedData.test.ts` - тестирование ъэндлера агрегации даных. В тестирование входит и загрузка в localStorage (localStorageMock)
+
   
