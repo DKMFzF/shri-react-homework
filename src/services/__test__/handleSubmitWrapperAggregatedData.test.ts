@@ -5,7 +5,7 @@ import type { AggregatedData } from '../../utils/type/api';
 
 vi.mock('../handleSubmitAggregatedData');
 
-describe('Обертка для обработки отправки агрегированных данных', () => {
+describe('Wrapper для обработки отправки агрегированных данных', () => {
   const mockSetError = vi.fn();
   const mockSetIsLoading = vi.fn();
   const mockSetAggregatedData = vi.fn();
@@ -41,7 +41,6 @@ describe('Обертка для обработки отправки агреги
       rows_affected: 10
     };
     
-    // Настраиваем мок для handleSubmit
     (handleSubmit as Mock).mockImplementation(async (
       _file, _setError, _setIsLoading, setData, onComplete
     ) => {

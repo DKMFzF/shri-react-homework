@@ -95,8 +95,9 @@ npm run test
   - `AnalystDragAndDrop.test.tsx` - тестирование компонента отвечающего за Drag&Drop. **В тестирование входит загрука файла перетаскиванием и загрузка на кнопку.**
 
 - localStorage и хэндлеры агрегации данных (unit-test)
-  - `handleDataChunk.test.ts` - тестирование хэдлера разбиения на чанки 
-  - `handleSubmitWrapperAggregatedData.test.ts` - тестирование ъэндлера агрегации даных. В тестирование входит и загрузка в localStorage (localStorageMock)
+  - `handleDataChunk.test.ts` - тестирование хэдлера разбиения на чанки
+  - `handleSubmitAggregatedData.test.ts` - тестирование хэндлера отправки даных.
+  - `handleSubmitWrapperAggregatedData.test.ts` - тестирование wrapper-а агрегации даных.
 
 - Тестирование Навигации (e2e-test)
   - `navigation.spec.ts` - тестирование переключение страниц
