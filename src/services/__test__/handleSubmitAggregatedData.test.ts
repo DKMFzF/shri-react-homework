@@ -4,7 +4,6 @@ import type { AggregatedData } from '../../utils/type/api';
 
 import { handleSubmit } from '../handleSubmitAggregatedData';
 
-// Мокаем весь модуль правильно
 vi.mock('../../api/aggregateApi', () => ({
   aggregateApi: {
     aggregateData: vi.fn()
