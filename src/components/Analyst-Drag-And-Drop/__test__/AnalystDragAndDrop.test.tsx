@@ -10,7 +10,7 @@ vi.mock('../../ui', () => ({
   AnalystDragAndDropUI: vi.fn((props) => (
     <div>
       <div role="region" data-testid="drop-region" onDrop={props.onDrop}>
-        Drop zone
+        Область для перетаскивания
       </div>
       <button 
         onClick={props.onButtonClick} 
@@ -19,7 +19,7 @@ vi.mock('../../ui', () => ({
         Загрузить файл
       </button>
       <button onClick={props.onReset} data-testid="reset-button">
-        Reset
+        Сбросить
       </button>
       <input
         type="file"
@@ -34,7 +34,7 @@ vi.mock('../../ui', () => ({
 const mockUseFileStore = vi.mocked(useFileStore);
 const mockUseDragAndDrop = vi.mocked(useDragAndDrop);
 
-describe('AnalystDragAndDrop', () => {
+describe('Компонент AnalystDragAndDrop', () => {
   const mockOnReset = vi.fn();
   const mockProcessFiles = vi.fn();
   const mockSetIsDragging = vi.fn();
@@ -67,14 +67,14 @@ describe('AnalystDragAndDrop', () => {
     vi.clearAllMocks();
   });
 
-  it('рендерится без ошибок', () => {
+  it('корректно отображается без ошибок', () => {
     render(
       <AnalystDragAndDrop onReset={mockOnReset} status="ready" isLoading={false} />
     );
     expect(screen.getByTestId('drop-region')).toBeInTheDocument();
   });
 
-  it('передает правильные пропсы в UI компонент', () => {
+  it('передает корректные свойства в UI компонент', () => {
     const mockFileName = 'test.csv';
     mockUseFileStore.mockReturnValueOnce({
       fileName: mockFileName,
@@ -94,7 +94,7 @@ describe('AnalystDragAndDrop', () => {
     });
   });
 
-  it('правильно комбинирует статус при ошибке', () => {
+  it('корректно обрабатывает состояние ошибки', () => {
     mockUseFileStore.mockReturnValueOnce({
       fileName: null,
       isDragging: false,
@@ -113,7 +113,7 @@ describe('AnalystDragAndDrop', () => {
     });
   });
 
-  it('вызывает onReset при сбросе', () => {
+  it('вызывает функцию сброса при нажатии кнопки Reset', () => {
     render(
       <AnalystDragAndDrop onReset={mockOnReset} status="ready" isLoading={false} />
     );
@@ -122,7 +122,7 @@ describe('AnalystDragAndDrop', () => {
     expect(mockOnReset).toHaveBeenCalled();
   });
 
-  it('обрабатывает загрузку файлов через useDragAndDrop', async () => {
+  it('обрабатывает перетаскивание и загрузку файлов', async () => {
     const mockFiles = [
       new File(['content'], 'test.csv', { type: 'text/csv' }),
     ] as unknown as FileList;
@@ -156,7 +156,7 @@ describe('AnalystDragAndDrop', () => {
     });
   });
 
-  it('правильно обрабатывает состояние загрузки', () => {
+  it('корректно отображает состояние загрузки', () => {
     render(
       <AnalystDragAndDrop onReset={mockOnReset} status="ready" isLoading={true} />
     );
@@ -167,7 +167,7 @@ describe('AnalystDragAndDrop', () => {
     });
   });
 
-  it('обрабатывает загрузку файлов через кнопку выбора файла', async () => {
+  it('обрабатывает загрузку файлов через кнопку выбора', async () => {
     const mockFiles = [
       new File(['content'], 'test.csv', { type: 'text/csv' }),
     ] as unknown as FileList;
@@ -201,7 +201,6 @@ describe('AnalystDragAndDrop', () => {
     fireEvent.click(uploadButton);
     
     expect(mockHandleButtonClick).toHaveBeenCalled();
-    
     expect(mockClick).toHaveBeenCalled();
 
     const fileInput = screen.getByTestId('file-input');

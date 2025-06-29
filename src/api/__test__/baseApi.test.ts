@@ -1,8 +1,8 @@
 import { describe, it, expect, vi } from 'vitest';
 import { handleResponse } from '../baseApi';
 
-describe('handleResponse', () => {
-  it('should return json for successful json response', async () => {
+describe('Обработка ответа от API', () => {
+  it('должен возвращать JSON для успешного JSON-ответа', async () => {
     const mockData = { key: 'value' };
     const mockResponse = {
       ok: true,
@@ -14,7 +14,7 @@ describe('handleResponse', () => {
     expect(result).toEqual(mockData);
   });
 
-  it('should return text for successful non-json response', async () => {
+  it('должен возвращать текст для успешного не-JSON ответа', async () => {
     const mockText = 'text response';
     const mockResponse = {
       ok: true,
@@ -26,7 +26,7 @@ describe('handleResponse', () => {
     expect(result).toBe(mockText);
   });
 
-  it('should throw error for not ok response', async () => {
+  it('должен выбрасывать ошибку для неуспешного ответа', async () => {
     const mockError = { error: 'Server error' };
     const mockResponse = {
       ok: false,

@@ -5,7 +5,7 @@ import type { AggregatedData } from '../../utils/type/api';
 
 vi.mock('../handleSubmitAggregatedData');
 
-describe('handleSubmitWrapper', () => {
+describe('Обертка для обработки отправки агрегированных данных', () => {
   const mockSetError = vi.fn();
   const mockSetIsLoading = vi.fn();
   const mockSetAggregatedData = vi.fn();
@@ -23,7 +23,7 @@ describe('handleSubmitWrapper', () => {
     localStorageMock.getItem.mockReturnValue(null);
   });
 
-  it('should not proceed if no file provided', async () => {
+  it('не должен продолжать обработку, если файл не предоставлен', async () => {
     await handleSubmitWrapper(
       null,
       mockSetError,
@@ -35,7 +35,7 @@ describe('handleSubmitWrapper', () => {
     expect(localStorageMock.setItem).not.toHaveBeenCalled();
   });
 
-  it('should call handleSubmit and update localStorage on success', async () => {
+  it('должен вызывать handleSubmit и обновлять localStorage при успешной обработке', async () => {
     const mockData: AggregatedData = {
       total_spend_galactic: 100,
       rows_affected: 10
@@ -68,7 +68,7 @@ describe('handleSubmitWrapper', () => {
     expect(history[0].fileName).toBe('test.csv');
   });
 
-  it('should update localStorage with error status on failure', async () => {
+  it('должен обновлять localStorage со статусом ошибки при неудачной обработке', async () => {
     (handleSubmit as Mock).mockImplementation(async (
       _file, _setError, _setIsLoading, _setData, onComplete
     ) => {

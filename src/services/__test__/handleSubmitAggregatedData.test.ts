@@ -1,7 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { aggregateApi } from '../../api/aggregateApi';
 import type { AggregatedData } from '../../utils/type/api';
-
 import { handleSubmit } from '../handleSubmitAggregatedData';
 
 vi.mock('../../api/aggregateApi', () => ({
@@ -10,7 +9,7 @@ vi.mock('../../api/aggregateApi', () => ({
   }
 }));
 
-describe('handleSubmit', () => {
+describe('Обработка отправки агрегированных данных', () => {
   const mockSetError = vi.fn();
   const mockSetIsLoading = vi.fn();
   const mockSetAggregatedData = vi.fn();
@@ -22,7 +21,7 @@ describe('handleSubmit', () => {
     (aggregateApi.aggregateData as any).mockReset();
   });
 
-  it('should set error if no file provided', async () => {
+  it('должен устанавливать ошибку если файл не предоставлен', async () => {
     await handleSubmit(
       null,
       mockSetError,
@@ -36,7 +35,7 @@ describe('handleSubmit', () => {
     expect(mockSetIsLoading).not.toHaveBeenCalled();
   });
 
-  it('should call API and handle successful response', async () => {
+  it('должен вызывать API и обрабатывать успешный ответ', async () => {
     const mockData: AggregatedData = {
       total_spend_galactic: 100,
       rows_affected: 10
@@ -66,7 +65,7 @@ describe('handleSubmit', () => {
     expect(mockSetIsLoading).toHaveBeenCalledWith(false);
   });
 
-  it('should handle API error', async () => {
+  it('должен обрабатывать ошибку API', async () => {
     (aggregateApi.aggregateData as any).mockRejectedValue(new Error('API error'));
 
     await expect(

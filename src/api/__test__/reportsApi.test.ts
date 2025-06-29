@@ -4,12 +4,12 @@ import { API_BASE_URL } from '../baseApi';
 
 global.fetch = vi.fn();
 
-describe('reportsApi', () => {
+describe('API для работы с отчетами', () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
-  it('should make GET request with correct params', async () => {
+  it('должен выполнять GET-запрос с корректными параметрами', async () => {
     const mockResponse = {
       ok: true,
       json: vi.fn().mockResolvedValue('report data'),
@@ -32,7 +32,7 @@ describe('reportsApi', () => {
     expect(result).toBe('report data');
   });
 
-  it('should handle error response', async () => {
+  it('должен корректно обрабатывать ошибочный ответ сервера', async () => {
     const mockResponse = {
       ok: false,
       json: vi.fn().mockResolvedValue({ error: 'Server error' })

@@ -2,8 +2,8 @@ import { describe, it, expect, vi } from 'vitest';
 import { handleDataChunk } from '../handleDataChunk';
 import type { AggregatedData } from '../../utils/type/api';
 
-describe('handleDataChunk', () => {
-  it('should correctly parse and set aggregated data for valid chunk with multiple JSONs', () => {
+describe('Обработка чанка данных', () => {
+  it('должен корректно парсить и устанавливать агрегированные данные для валидного чанка с несколькими JSON', () => {
     const mockSetAggregatedData = vi.fn();
     const validChunk = `{"total": 50} {"total_spend_galactic": 100, "rows_affected": 10}`;
     const expectedData: AggregatedData = {
@@ -16,7 +16,7 @@ describe('handleDataChunk', () => {
     expect(mockSetAggregatedData).toHaveBeenCalledWith(expectedData);
   });
 
-  it('should not call setAggregatedData for single JSON chunk', () => {
+  it('не должен вызывать setAggregatedData для чанка с одним JSON', () => {
     const mockSetAggregatedData = vi.fn();
     const singleJsonChunk = `{"total_spend_galactic": 100, "rows_affected": 10}`;
 
@@ -25,7 +25,7 @@ describe('handleDataChunk', () => {
     expect(mockSetAggregatedData).not.toHaveBeenCalled();
   });
 
-  it('should throw error for invalid chunk', () => {
+  it('должен выбрасывать ошибку для невалидного чанка', () => {
     const mockSetAggregatedData = vi.fn();
     const invalidChunk = 'invalid json { not valid }';
 
@@ -33,7 +33,7 @@ describe('handleDataChunk', () => {
     expect(mockSetAggregatedData).not.toHaveBeenCalled();
   });
 
-  it('should handle empty chunk', () => {
+  it('должен корректно обрабатывать пустой чанк', () => {
     const mockSetAggregatedData = vi.fn();
     const emptyChunk = '';
 

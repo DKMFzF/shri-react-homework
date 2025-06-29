@@ -3,7 +3,7 @@ import { describe, expect, vi, it, beforeEach } from 'vitest';
 import { useDragAndDrop } from '../useDragAndDrop';
 import { type UseDragAndDropProps } from '../type';
 
-describe('useDragAndDrop', () => {
+describe('Хук useDragAndDrop', () => {
   const mockOnFilesSelected = vi.fn();
   const mockOnDragStateChange = vi.fn();
 
@@ -21,7 +21,7 @@ describe('useDragAndDrop', () => {
     vi.clearAllMocks();
   });
 
-  it('should return ref and handlers', () => {
+  it('должен возвращать ref и обработчики событий', () => {
     const { result } = setup();
 
     expect(result.current.fileInputRef).toBeDefined();
@@ -31,8 +31,8 @@ describe('useDragAndDrop', () => {
     expect(result.current.handleDrop).toBeInstanceOf(Function);
   });
 
-  describe('handleButtonClick', () => {
-    it('should trigger click on file input', () => {
+  describe('Обработчик handleButtonClick', () => {
+    it('должен вызывать click на input элементе', () => {
       const { result } = setup();
       const mockClick = vi.fn();
       
@@ -45,7 +45,7 @@ describe('useDragAndDrop', () => {
       expect(mockClick).toHaveBeenCalled();
     });
 
-    it('should not throw if ref is null', () => {
+    it('не должен выбрасывать ошибку если ref равен null', () => {
       const { result } = setup();
       
       result.current.fileInputRef.current = null;
@@ -54,8 +54,8 @@ describe('useDragAndDrop', () => {
     });
   });
 
-  describe('handleFileChange', () => {
-    it('should call onFilesSelected when files are selected', () => {
+  describe('Обработчик handleFileChange', () => {
+    it('должен вызывать onFilesSelected при выборе файлов', () => {
       const { result } = setup();
       const mockFiles = [new File(['content'], 'file.txt')];
       const mockEvent = {
@@ -69,7 +69,7 @@ describe('useDragAndDrop', () => {
       expect(mockOnFilesSelected).toHaveBeenCalledWith(mockFiles);
     });
 
-    it('should not call onFilesSelected when no files are selected', () => {
+    it('не должен вызывать onFilesSelected если файлы не выбраны', () => {
       const { result } = setup();
       const mockEvent = {
         target: {
@@ -83,8 +83,8 @@ describe('useDragAndDrop', () => {
     });
   });
 
-  describe('handleDrag', () => {
-    it('should prevent default and stop propagation', () => {
+  describe('Обработчик handleDrag', () => {
+    it('должен предотвращать поведение по умолчанию и останавливать всплытие', () => {
       const { result } = setup();
       const mockEvent = {
         preventDefault: vi.fn(),
@@ -98,7 +98,7 @@ describe('useDragAndDrop', () => {
       expect(mockEvent.stopPropagation).toHaveBeenCalled();
     });
 
-    it('should call onDragStateChange with true for dragenter/dragover', () => {
+    it('должен вызывать onDragStateChange(true) для событий dragenter/dragover', () => {
       const { result } = setup();
       const mockEvent = {
         preventDefault: vi.fn(),
@@ -111,7 +111,7 @@ describe('useDragAndDrop', () => {
       expect(mockOnDragStateChange).toHaveBeenCalledWith(true);
     });
 
-    it('should call onDragStateChange with false for other events', () => {
+    it('должен вызывать onDragStateChange(false) для других событий', () => {
       const { result } = setup();
       const mockEvent = {
         preventDefault: vi.fn(),
@@ -124,7 +124,7 @@ describe('useDragAndDrop', () => {
       expect(mockOnDragStateChange).toHaveBeenCalledWith(false);
     });
 
-    it('should not call onDragStateChange when not provided', () => {
+    it('не должен вызывать onDragStateChange если он не передан', () => {
       const { result } = setup({ onDragStateChange: undefined });
       const mockEvent = {
         preventDefault: vi.fn(),
@@ -138,8 +138,8 @@ describe('useDragAndDrop', () => {
     });
   });
 
-  describe('handleDrop', () => {
-    it('should prevent default and stop propagation', () => {
+  describe('Обработчик handleDrop', () => {
+    it('должен предотвращать поведение по умолчанию и останавливать всплытие', () => {
       const { result } = setup();
       const mockEvent = {
         preventDefault: vi.fn(),
@@ -153,7 +153,7 @@ describe('useDragAndDrop', () => {
       expect(mockEvent.stopPropagation).toHaveBeenCalled();
     });
 
-    it('should call onDragStateChange with false', () => {
+    it('должен вызывать onDragStateChange(false)', () => {
       const { result } = setup();
       const mockEvent = {
         preventDefault: vi.fn(),
@@ -166,7 +166,7 @@ describe('useDragAndDrop', () => {
       expect(mockOnDragStateChange).toHaveBeenCalledWith(false);
     });
 
-    it('should call onFilesSelected when files are present', () => {
+    it('должен вызывать onFilesSelected при наличии файлов', () => {
       const { result } = setup();
       const mockFiles = [new File(['content'], 'file.txt')];
       const mockEvent = {
@@ -180,7 +180,7 @@ describe('useDragAndDrop', () => {
       expect(mockOnFilesSelected).toHaveBeenCalledWith(mockFiles);
     });
 
-    it('should not call onFilesSelected when no files are present', () => {
+    it('не должен вызывать onFilesSelected если файлы отсутствуют', () => {
       const { result } = setup();
       const mockEvent = {
         preventDefault: vi.fn(),

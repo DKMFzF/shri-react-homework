@@ -4,14 +4,14 @@ import { API_BASE_URL } from '../baseApi';
 
 global.fetch = vi.fn();
 
-describe('aggregateApi', () => {
+describe('API для агрегации данных', () => {
   const mockFile = new File(['content'], 'test.csv', { type: 'text/csv' });
 
   beforeEach(() => {
     vi.clearAllMocks();
   });
 
-  it('should make POST request with form data', async () => {
+  it('должен выполнять POST-запрос с form-data', async () => {
     const mockResponse = {
       ok: true,
       body: {
@@ -45,7 +45,7 @@ describe('aggregateApi', () => {
     expect(onDataReceived).toHaveBeenCalledWith('chunk1');
   });
 
-  it('should throw error when response not ok', async () => {
+  it('должен выбрасывать ошибку при неудачном ответе сервера', async () => {
     const mockResponse = {
       ok: false,
       json: vi.fn().mockResolvedValue({ error: 'Server error' })
