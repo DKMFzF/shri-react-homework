@@ -20,8 +20,8 @@ yarn dev
 
 ## Документация
 
-- [frontend](./shri2025-analyzer-api/readme.md)
-- [backend](./shri2025-frontend/README.md)
+- [backend](./shri2025-analyzer-api/readme.md)
+- [frontend](./shri2025-frontend/README.md)
 
 ### Тестирование приложения
 
