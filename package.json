@@ -10,11 +10,21 @@
     "type": "git",
     "url": "git+https://github.com/DKMFzF/shri2025-yandex-school-hw-react.git"
   },
+  "workspaces": [
+    "shri2025-analyzer-api",
+    "shri2025-frontend"
+  ],
   "license": "ISC",
   "author": "dkmfzf",
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:frontend": "npm run dev --workspace=shri2025-frontend",
+    "start:api": "npm run start --workspace=shri2025-analyzer-api",
+    "dev": "concurrently \"npm run start:api\" \"npm run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "wait-on": "^8.0.3"
   }
 }
